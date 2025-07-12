@@ -9,10 +9,12 @@
 		"astro": "astro",
 		"format": "bunx biome format --write .",
 		"lint": "bunx biome lint --write .",
-		"check": "bunx biome check --write ."
+		"check": "bunx biome check --write .",
+		"test:e2e": "playwright test"
 	},
 	"dependencies": {
 		"@astrojs/react": "^4.3.0",
+		"@playwright/test": "^1.54.1",
 		"@radix-ui/react-slot": "^1.2.3",
 		"@tailwindcss/vite": "^4.1.11",
 		"@types/react": "^19.1.8",
