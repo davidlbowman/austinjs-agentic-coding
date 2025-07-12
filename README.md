@@ -1,47 +1,98 @@
-# Astro Starter Kit: Minimal
+# AustinJS Agentic Coding
 
-```sh
-bun create astro@latest -- --template minimal
+A single-page educational site teaching developers how to leverage multiple AI agents simultaneously with Claude Code and GitHub CLI for enhanced productivity.
+
+## 🚀 Quick Start
+
+```bash
+# Install dependencies
+bun install
+
+# Start development server
+bun dev
+
+# Open http://localhost:4321
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## 📚 What You'll Learn
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- **Multi-Agent Workflows**: How to use multiple Claude agents in parallel
+- **GitHub CLI Integration**: Automating GitHub workflows with AI assistance
+- **MCP Tools**: Setting up Model Context Protocol tools for enhanced capabilities
+- **Best Practices**: Effective patterns for AI-assisted development
 
-## 🚀 Project Structure
+## 🛠️ Technology Stack
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Framework**: [Astro](https://astro.build) v5.11.0 - Fast static site generator
+- **UI**: React + [shadcn/ui](https://ui.shadcn.com) - Beautiful, accessible components
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com) - Modern utility-first CSS
+- **Language**: TypeScript - Type-safe development
+- **Testing**: [Playwright](https://playwright.dev) - Cross-browser E2E testing
+- **Code Quality**: [Biome](https://biomejs.dev) - Fast formatter and linter
+- **Runtime**: [Bun](https://bun.sh) - Fast all-in-one JavaScript runtime
 
-```text
-/
-├── public/
+## 📁 Project Structure
+
+```
+austinjs-agentic-coding/
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── pages/          # Astro pages (file-based routing)
+│   ├── components/     # React components and shadcn/ui
+│   ├── lib/           # Utility functions and Effect code
+│   └── styles/        # Global styles and Tailwind config
+├── e2e/               # Playwright E2E tests (*-e2e.ts)
+├── public/            # Static assets
+└── CLAUDE.md          # AI assistant guidance file
 ```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
 
 ## 🧞 Commands
 
-All commands are run from the root of the project, from a terminal:
+All commands are run from the root of the project:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
+| Command | Action |
+|---------|--------|
+| `bun install` | Install dependencies |
+| `bun dev` | Start local dev server at `localhost:4321` |
+| `bun build` | Build production site to `./dist/` |
+| `bun preview` | Preview production build locally |
+| `bun format` | Format code with Biome |
+| `bun lint` | Lint code with Biome |
+| `bun check` | Run format and lint checks |
+| `bun typecheck` | Check TypeScript types |
+| `bun test:e2e` | Run Playwright E2E tests |
 
-## 👀 Want to learn more?
+## 🧪 Testing
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+This project uses Playwright for E2E testing across multiple browsers:
+- Chrome
+- Firefox  
+- Edge
+- Mobile Chrome
+- Mobile Firefox
+
+Tests are located in the `e2e/` directory and must end with `-e2e.ts`.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Run quality checks before committing:
+   ```bash
+   bun typecheck
+   bun check
+   bun test:e2e
+   ```
+4. Commit your changes (`git commit -m 'Add amazing feature'`)
+5. Push to the branch (`git push origin feature/amazing-feature`)
+6. Open a Pull Request
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🔗 Resources
+
+- [Claude Code Documentation](https://docs.anthropic.com/en/docs/claude-code)
+- [GitHub CLI Documentation](https://cli.github.com)
+- [Astro Documentation](https://docs.astro.build)
+- [Effect Documentation](https://effect.website)

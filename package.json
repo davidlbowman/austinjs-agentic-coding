@@ -10,6 +10,7 @@
 		"format": "bunx biome format --write .",
 		"lint": "bunx biome lint --write .",
 		"check": "bunx biome check --write .",
+		"typecheck": "bunx tsc --noEmit",
 		"test:e2e": "playwright test"
 	},
 	"dependencies": {

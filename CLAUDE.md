@@ -27,6 +27,7 @@ bun check        # Run both format and lint checks
 ### Testing
 
 ```bash
+bun typecheck    # Run TypeScript type checking
 bun test:e2e     # Run Playwright E2E tests with text output
 ```
 
@@ -47,7 +48,7 @@ bun add <pkg>    # Add new dependency
 - **Language**: TypeScript with strict mode
 - **Package Manager**: Bun
 - **Code Quality**: Biome for formatting and linting
-- **Testing**: Playwright for E2E tests
+- **Testing**: Playwright for E2E tests (multi-browser: Chrome, Firefox, Edge, Mobile)
 - **Functional Programming**: Effect for type-safe functions
 
 ### Project Structure
@@ -67,6 +68,7 @@ bun add <pkg>    # Add new dependency
 - **shadcn/ui**: Configured in components.json with "new-york" style and CSS variables
 - **Biome**: Auto-formatting on file modifications
 - **Playwright**: Configured for textual output to enable test result reading
+- **E2E Test Pattern**: Files in `e2e/` directory must end with `-e2e.ts`
 
 ## Frontend Development Patterns
 
@@ -186,6 +188,29 @@ test("should handle errors", async () => {
 
 The project is designed to demonstrate MCP (Model Context Protocol) tools integration. Future setup will include tools for enhanced development workflows.
 
+## Development Workflow
+
+### Quality Assurance Protocol
+
+After completing EACH todo item, run these verification scripts:
+
+```bash
+bun typecheck    # Ensure TypeScript types are correct
+bun check        # Run Biome format and lint checks
+bun test:e2e     # Run Playwright E2E tests
+```
+
+**CRITICAL**: Never proceed to the next todo until all checks pass.
+
+### Task Management
+
+1. User assigns tasks
+2. Create todos for each task
+3. Complete one todo at a time
+4. Run ALL verification scripts after each todo
+5. Fix any issues before proceeding
+6. Mark todo as completed only when all checks pass
+
 ## Important Notes
 
 - **Static Site Focus**: This is a single-page site - avoid overcomplicating
@@ -193,4 +218,5 @@ The project is designed to demonstrate MCP (Model Context Protocol) tools integr
 - **Testing Output**: Playwright tests must use text reporter for readability
 - **No Backend**: This is a static site with no server-side logic
 - **Educational Purpose**: Code should be clear and demonstrate best practices for teaching
+- **Quality Gates**: Every change must pass typecheck, biome check, and E2E tests
 
