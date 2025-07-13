@@ -1,175 +1,75 @@
 <!-- markdownlint-disable-file MD013 -->
-# AustinJS Agentic Coding
+# AI in Software Engineering: Current State, Pros, Cons, and Tool Selection Guide
 
-A single-page educational site teaching developers how to leverage multiple AI agents simultaneously with Claude Code and GitHub CLI for enhanced productivity.
+This document provides an overview of AI's role in software engineering as of mid-2025, tailored for professional engineers already using AI in their workflows. It focuses on practical insights, including pros and cons, and emphasizes the core limitations of AI—particularly context and compute—as the key factors in tool selection. The main theme is that AI development is fundamentally a game of context and compute: with infinite context and compute, we could achieve nearly anything in software engineering. Tools are chosen based on how well they address these limitations, such as context window size and efficient context utilization.
 
-## 🚀 Quick Start
+## Where We Stand Today
 
-```bash
-# Install dependencies
-bun install
+In 2025, AI is deeply integrated into software engineering, with over 80% of organizations using it in development processes. It's evolved from basic assistance to handling complex tasks like code generation and optimization, boosting productivity by 25% or more in many teams. However, core limitations like finite context windows and computational constraints mean we're far from "infinite" capabilities, requiring smart tool choices to maximize effectiveness. Challenges such as tool reliability and ethical concerns persist, demanding careful oversight.
 
-# Start development server
-bun dev
+## Pros of AI in Software Engineering
 
-# Open http://localhost:4321
-```
+AI enhances efficiency and innovation, acting as a powerful collaborator despite its limitations.
 
-## 🛠️ Technology Stack
+- **Increased Productivity**: Automates repetitive tasks such as code generation and testing, reducing development time by 25-30%.
+- **Improved Code Quality**: Detects bugs, vulnerabilities, and inefficiencies early through real-time analysis.
+- **Better Collaboration**: Offers data-driven insights and optimizations, aiding team decision-making and knowledge sharing.
+- **Personalized Assistance**: Adapts to individual coding styles, accelerating learning and exploration of new technologies.
 
-- **Framework**: [Astro](https://astro.build) v5.11.0 - Fast static site generator
-- **UI**: React + [shadcn/ui](https://ui.shadcn.com) - Beautiful, accessible components
-- **Styling**: [Tailwind CSS v4](https://tailwindcss.com) - Modern utility-first CSS
-- **Language**: TypeScript - Type-safe development
-- **Testing**: [Playwright](https://playwright.dev) - Cross-browser E2E testing
-- **Code Quality**: [Biome](https://biomejs.dev) - Fast formatter and linter
-- **Runtime**: [Bun](https://bun.sh) - Fast all-in-one JavaScript runtime
+## Cons of AI in Software Engineering
 
-## 🧞 Commands
+While beneficial, AI introduces risks tied to its inherent limitations in context and compute, which engineers must mitigate.
 
-All commands are run from the root of the project:
+- **Skill Erosion**: Overreliance can weaken critical thinking, debugging, and foundational skills if outputs aren't verified, especially when context is mishandled.
+- **Bias and Security Issues**: May propagate biases from training data or introduce vulnerabilities in generated code due to incomplete context.
+- **Integration Challenges**: Adds complexity with steep learning curves and potential for new bugs in workflows, exacerbated by compute constraints.
+- **Job Role Shifts**: Could automate routine coding, pushing engineers toward oversight and strategic roles by 2040, as context and compute evolve.
 
-| Command | Action |
-|---------|--------|
-| `bun install` | Install dependencies |
-| `bun dev` | Start local dev server at `localhost:4321` |
-| `bun build` | Build production site to `./dist/` |
-| `bun preview` | Preview production build locally |
-| `bun format` | Format code with Biome |
-| `bun lint` | Lint code with Biome |
-| `bun check` | Run format and lint checks |
-| `bun typecheck` | Check TypeScript types |
-| `bun test:e2e` | Run Playwright E2E tests |
+## Context in AI Coding Tools
 
----
+Context is the cornerstone of AI effectiveness in software engineering—it's the information (e.g., code history, project details, external data) that models use to generate relevant responses. Larger context windows (e.g., millions of tokens) allow AI to consider more data at once, leading to more accurate and project-aware suggestions. However, limitations in context size and management often result in irrelevant outputs, hallucinations, or errors. This is why AI development is a "context and compute game": finite context restricts the model's "memory," while limited compute power caps processing speed and complexity. If we had infinite context (unlimited data retention) and compute (endless processing power), AI could handle any engineering task flawlessly, from end-to-end system design to adaptive optimization. In reality, we choose tools based on how well they expand or optimize context usage, such as through efficient token management or external integrations.
 
-## 📖 Coding with AI: A 7-Minute Guide
+## Compute in AI Coding Tools
 
-### 🎯 Introduction: The AI Revolution in Software Development
+Compute refers to the processing power required to run AI models, encompassing both local machine resources (e.g., your device's CPU/GPU for on-device inference) and remote APIs (e.g., cloud-based services for heavy lifting). It determines how quickly and complexly AI can process inputs, generate outputs, and handle tasks like reasoning or optimization. Limitations in compute create bottlenecks: on local machines, insufficient hardware leads to slow response times or inability to run large models, while API calls introduce latency, costs, and dependency on external servers. For instance, high-compute tasks like training custom models or running parallel simulations can exhaust resources, causing timeouts or incomplete results. In the "context and compute game," finite compute restricts scalability—if we had infinite compute, AI could process vast contexts instantaneously, enabling real-time, hyper-complex engineering solutions. Tools that optimize compute (e.g., via efficient algorithms or edge computing) are essential to mitigate these constraints.
 
-We're living through a fundamental shift in how we write code. AI coding assistants have evolved from simple autocomplete tools to sophisticated partners that can understand complex requirements, navigate entire codebases, and implement features from high-level descriptions. This talk explores the current state of AI-assisted development, its benefits and limitations, and most importantly, how to leverage these tools effectively.
+## The Relationship Between Context and Compute
 
-### 🔧 The Current Landscape: Tools and Approaches
+From first principles, context and compute are interdependent forces in AI systems: context provides the raw material (data and knowledge) for intelligent outputs, while compute supplies the energy to process and reason over that material. They form a fundamental trade-off—more context demands more compute to analyze it effectively, and limited compute forces compromises in how much context can be handled without degradation. For example, if we had infinite compute (assuming no hardware limitations), we theoretically wouldn't need fixed context windows at all; models could dynamically process and retain unlimited information in real-time, querying and synthesizing data on the fly without memory constraints. Conversely, infinite context without sufficient compute would lead to paralysis, as the system couldn't efficiently traverse or utilize the vast data. In practice, current AI toolsets represent a compromise between these two: they balance finite context windows with optimized compute strategies (like caching or selective processing) to approximate ideal performance, but this often results in workarounds such as external lookups or modular agents to stretch capabilities without overwhelming resources. Understanding this interplay helps engineers select tools that minimize these compromises for their specific workflows.
 
-#### 💻 CLI Tools: Command-Line AI Assistants
+## MCP: Model Context Protocol Explained
 
-**Claude Code** (claude.ai/code) represents the cutting edge of CLI-based AI coding. It's not just a chatbot—it's a full development environment that can read files, execute commands, run tests, and even create pull requests. The key innovation is its ability to maintain context across an entire coding session while providing direct file system access.
+The Model Context Protocol (MCP) is an open standard designed to connect AI models securely to external tools, data sources, and APIs. It functions as a universal interface, enabling standardized, bidirectional interactions—like fetching data from databases or executing functions—without proprietary lock-in. MCP streamlines how AI accesses and processes information beyond its internal knowledge, making it a critical advancement for scalable AI applications in engineering.
 
-**Gemini** and other CLI tools are following similar patterns, offering terminal-based interfaces that integrate directly into existing developer workflows. These tools excel at tasks like refactoring, debugging, and implementing features across multiple files.
+## How MCP Affects Context and Compute
 
-#### 🖥️ IDE Tools: AI-Integrated Development Environments
+MCP effectively helps manage and expand context by providing better lookup tools and integrations, allowing AI to "contract" or compact context needs through efficient external queries. Instead of overloading a model's internal context window with all data upfront, MCP enables real-time retrieval from sources like files, APIs, or databases, reducing token usage and making context more dynamic. This contraction of effective context requirements improves accuracy, minimizes hallucinations, and scales to larger projects. For example, an AI tool using MCP can pull specific code snippets or project metadata on demand, enriching responses without exhausting resources.
 
-**Cursor** pioneered the AI-first IDE approach, building AI capabilities directly into the editor experience. It offers inline code generation, intelligent code completion, and the ability to chat with your codebase. The seamless integration means you never leave your editor.
+On the compute side, MCP optimizes processing by offloading tasks to external systems, distributing workload to reduce local machine strain and API latency. It enables more efficient compute allocation, such as caching frequent queries or parallelizing data fetches, which lowers overall costs and speeds up workflows. However, it introduces setup complexity and potential security considerations, as improper configuration could expose sensitive data or increase compute overhead from mismanaged integrations.
 
-**Windsurf** (by Codeium) takes a different approach, focusing on speed and local model support. It provides similar capabilities but emphasizes privacy and the ability to use models that run entirely on your machine.
+## Agentic Coding Explained
 
-#### 🤖 The Model Ecosystem: Different Tools for Different Tasks
+Agentic coding refers to systems where autonomous AI agents handle tasks independently or collaboratively, often powered by large language models (LLMs) that execute code-based reasoning. These agents go beyond simple code generation; they simulate end-to-end engineering workflows, such as planning, coding, testing, and iterating. Tools like Devin exemplify this by acting as virtual software engineers capable of managing full projects through modular, goal-oriented behaviors.
 
-Not all AI models are created equal. Each has its strengths:
+## How Agentic Coding Affects Context and Compute
 
-- **Claude (Anthropic)**: Excels at understanding complex requirements, maintaining context, and following detailed instructions. Particularly strong at refactoring and architectural decisions.
-- **GPT-4 (OpenAI)**: Broad knowledge base, excellent at explaining concepts and generating boilerplate code.
-- **DeepSeek**: Specialized in understanding code patterns and generating efficient algorithms.
-- **Llama/CodeLlama**: Open-source models that can run locally, offering privacy and customization.
-- **GitHub Copilot**: Integrated directly into the development workflow, excellent for line-by-line code completion.
+Agentic coding expands context by distributing it across multiple agents working in parallel—for instance, one agent for code writing, another for testing, and a third for optimization—allowing the system to handle more complex problems without hitting single-model token limits. This parallelism requires greater token generation to maintain synchronization and shared knowledge, increasing demands to prevent inconsistencies. While it overcomes some context limitations by modularizing tasks, it can complicate management, as agents must coordinate to avoid lost details or conflicting outputs.
 
-### ✅ The Power of AI Coding: Benefits
+Regarding compute, agentic coding intensifies requirements due to parallel processing and real-time coordination, potentially straining local machines with high resource usage or escalating API costs for cloud-based agents. It demands efficient compute distribution to "survive" the expanded scope, such as through optimized orchestration, but can lead to bottlenecks if not managed well. In the broader "context and compute game," agentic approaches push toward infinite-like capabilities but highlight trade-offs: more agents mean richer context but higher compute costs and potential for errors if not orchestrated well.
 
-#### 🚀 Accelerated Development
+## Choosing AI Tools: Key Criteria Focused on Context and Compute Limitations
 
-AI can generate boilerplate code, implement repetitive patterns, and handle routine tasks in seconds rather than minutes or hours. This isn't about replacing developers—it's about eliminating the mundane so you can focus on the interesting problems.
+Given that AI's primary limitations are context (window size and usage efficiency) and compute, tool selection should prioritize how well they address these. Your audience, already AI users, can evaluate based on advanced needs like agentic support and MCP compatibility. Here's how to choose:
 
-#### 💎 Enhanced Code Quality
+- **Context Handling**: Favor tools with large windows, efficient token management, and features to expand or compact context (e.g., via lookups). Test how they maintain relevance in large projects without overwhelming compute.
+- **Compute Efficiency**: Select options that optimize processing to handle parallelism or complex queries without excessive costs or delays, balancing local and API-based resources.
+- **MCP Integration**: Choose MCP-compatible tools for seamless external data access, which contracts context needs and boosts scalability.
+- **Agentic Capabilities**: Opt for those supporting multi-agent parallelism to expand context, but ensure they manage token generation effectively to avoid compute bottlenecks.
+- **Privacy and Security**: Prioritize on-device or secure processing to protect sensitive context data.
+- **Integration and Usability**: Ensure easy workflow fit, with low overhead for context setup.
+- **Cost vs. Gains**: Balance subscriptions against productivity boosts (e.g., 25% efficiency), focusing on context/compute ROI.
+- **Ethical Fit**: Pick tools that allow verification to counter skill erosion, with transparency on bias in context handling.
 
-AI assistants can spot bugs, suggest improvements, and ensure consistency across your codebase. They remember every best practice and can apply them uniformly.
+## Final Thoughts
 
-#### 📚 Learning and Discovery
-
-AI tools serve as always-available mentors, explaining complex concepts, suggesting better approaches, and introducing you to new libraries and patterns.
-
-#### 🧠 Reduced Cognitive Load
-
-By handling routine tasks and remembering context, AI reduces the mental overhead of development, allowing you to maintain flow state longer.
-
-### ⚠️ The Limitations: What AI Can't Do (Yet)
-
-#### ❌ Lack of True Understanding
-
-AI doesn't truly understand your business logic or user needs. It pattern-matches based on training data, which means it can generate syntactically correct code that completely misses the point.
-
-#### 📏 Context Window Constraints
-
-Even the best AI models have limits on how much code they can consider at once. Large codebases can overwhelm these systems, leading to suggestions that don't account for important architectural decisions made elsewhere.
-
-#### 🎭 Hallucinations and Inaccuracies
-
-AI can confidently generate code using APIs that don't exist or suggest outdated approaches. It requires constant vigilance and verification.
-
-#### 🔒 Security and Privacy Concerns
-
-Sending code to external AI services raises legitimate concerns about intellectual property and security. Understanding what data leaves your machine is crucial.
-
-#### 🎨 Limited Creativity
-
-While AI excels at applying known patterns, it struggles with truly novel solutions. Innovation still requires human insight.
-
-### 🎯 Understanding Context: The Key to Effective AI Coding
-
-Context is everything in AI-assisted development. The quality of AI output directly correlates with the quality of context you provide. This includes:
-
-#### 📂 Project Context
-
-Your project structure, dependencies, conventions, and architectural decisions. Tools like CLAUDE.md files help maintain this context across sessions.
-
-#### 📝 Task Context
-
-Clear, specific descriptions of what you're trying to achieve. Vague requests yield vague results.
-
-#### 📜 Historical Context
-
-Previous decisions, failed approaches, and lessons learned. AI can't read your mind about what you've already tried.
-
-#### 🏢 Domain Context
-
-Business rules, user requirements, and domain-specific knowledge that isn't captured in code.
-
-### 📋 Best Practices for AI-Assisted Development
-
-#### 1. Start with Clear Specifications
-
-The better you can articulate what you want, the better the AI can help. Treat it like a very talented junior developer who needs clear direction.
-
-#### 2. Maintain Project Documentation
-
-Files like CLAUDE.md, comprehensive READMEs, and inline comments help AI understand your project's specific needs and conventions.
-
-#### 3. Verify Everything
-
-Never trust AI output blindly. Run tests, review code, and understand what's being generated. AI is a tool, not a replacement for your expertise.
-
-#### 4. Use Multiple Models
-
-Different models have different strengths. Claude might excel at refactoring while GPT-4 might better explain a complex algorithm. Use the right tool for the job.
-
-#### 5. Leverage Parallel Processing
-
-Modern tools like Claude Code support multiple agents working simultaneously. Launch searches, file reads, and analyses in parallel to maximize efficiency.
-
-#### 6. Establish Boundaries
-
-Be clear about what the AI should and shouldn't do. Set up linting rules, type checking, and tests to catch AI mistakes automatically.
-
-### 🔮 The Future: Where We're Heading
-
-The trajectory is clear: AI will become increasingly integrated into every aspect of development. We're moving toward:
-
-- **Autonomous Agents**: AI that can take high-level requirements and implement entire features with minimal supervision
-- **Specialized Models**: AI trained on specific frameworks, languages, or domains
-- **Local-First AI**: More powerful models that run entirely on your machine
-- **Collaborative AI**: Multiple specialized agents working together on different aspects of a problem
-
-### 🎬 Conclusion: Embracing the AI Revolution
-
-AI coding assistants aren't going to replace developers—they're going to amplify us. The developers who thrive will be those who learn to leverage these tools effectively, understanding both their immense power and their current limitations. The future of development isn't human or AI—it's human and AI, working together to build software faster, better, and more creatively than ever before.
-
-The key is to start now. Pick a tool, understand its strengths and limitations, and begin integrating it into your workflow. The learning curve is gentle, but the productivity gains are exponential. Welcome to the future of coding—it's already here.
+AI in software engineering is defined by the interplay of context and compute—mastering these limitations unlocks greater potential, while ignoring them amplifies cons like skill erosion. By prioritizing context-first approaches, leveraging MCP for efficient management, and embracing agentic coding for expansion, we can build innovative workflows. Choose tools that align with these realities, always verify outputs, and adapt to push toward that "infinite" horizon.
