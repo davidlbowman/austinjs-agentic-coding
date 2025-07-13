@@ -15,7 +15,7 @@ export function HeroSection() {
 					Current State, Pros, Cons, and Tool Selection Guide
 				</h2>
 
-				<p className="text-lg leading-relaxed text-muted-foreground max-w-3xl mx-auto">
+				<p className="text-lg leading-relaxed max-w-3xl mx-auto">
 					This document provides an overview of AI's role in software
 					engineering as of mid-2025, tailored for professional engineers
 					already using AI in their workflows. It focuses on practical insights,

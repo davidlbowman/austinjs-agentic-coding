@@ -1,4 +1,5 @@
 ---
+import { CurrentStateSection } from "@/components/CurrentStateSection";
 import { HeroSection } from "@/components/HeroSection";
 import "@/styles/global.css";
 ---
@@ -16,6 +17,7 @@ import "@/styles/global.css";
 	<body>
 		<main>
 			<HeroSection client:load />
+			<CurrentStateSection client:load />
 		</main>
 	</body>
 </html>
