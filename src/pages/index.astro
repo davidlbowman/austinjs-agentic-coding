@@ -1,9 +1,16 @@
 ---
+import { AgenticCodingSection } from "@/components/AgenticCodingSection";
 import { AIScalarSection } from "@/components/AIScalarSection";
+import { ComputeSection } from "@/components/ComputeSection";
+import { ConclusionSection } from "@/components/ConclusionSection";
+import { ContextComputeRelationshipSection } from "@/components/ContextComputeRelationshipSection";
 import { ContextSection } from "@/components/ContextSection";
 import { CurrentStateSection } from "@/components/CurrentStateSection";
 import { HeroSection } from "@/components/HeroSection";
+import { MCPSection } from "@/components/MCPSection";
+import { PreparationSection } from "@/components/PreparationSection";
 import { ProsConsSection } from "@/components/ProsConsSection";
+import { ToolSelectionSection } from "@/components/ToolSelectionSection";
 import "@/styles/global.css";
 ---
 
@@ -24,6 +31,13 @@ import "@/styles/global.css";
 			<ProsConsSection client:load />
 			<AIScalarSection client:load />
 			<ContextSection client:load />
+			<ComputeSection client:load />
+			<ContextComputeRelationshipSection client:load />
+			<MCPSection client:load />
+			<AgenticCodingSection client:load />
+			<ToolSelectionSection client:load />
+			<PreparationSection client:load />
+			<ConclusionSection client:load />
 		</main>
 	</body>
 </html>
