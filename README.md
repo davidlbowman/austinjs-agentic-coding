@@ -1,4 +1,4 @@
-<!-- markdownlint-disable-file MD013 -->
+<!-- markdownl
 # AI in Software Engineering: Current State, Pros, Cons, and Tool Selection Guide
 
 This document provides an overview of AI's role in software engineering as of mid-2025, tailored for professional engineers already using AI in their workflows. It focuses on practical insights, including pros and cons, and emphasizes the core limitations of AI—particularly context and compute—as the key factors in tool selection. The main theme is that AI development is fundamentally a game of context and compute: with infinite context and compute, we could achieve nearly anything in software engineering. Tools are chosen based on how well they address these limitations, such as context window size and efficient context utilization.

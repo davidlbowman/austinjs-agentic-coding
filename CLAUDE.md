@@ -1,3 +1,4 @@
+<!-- markdownlint-disable-file MD013 -->
 # CLAUDE.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
@@ -220,3 +221,104 @@ bun test:e2e     # Run Playwright E2E tests
 - **Educational Purpose**: Code should be clear and demonstrate best practices for teaching
 - **Quality Gates**: Every change must pass typecheck, biome check, and E2E tests
 
+## UI/UX Strategy: Converting README to Interactive Single-Page App
+
+### Design Philosophy
+
+Transform the technical README content into an engaging, interactive experience using shadcn/ui components with creative layouts and micro-interactions. Each section should feel distinct while maintaining visual cohesion.
+
+### Section-by-Section Component Mapping
+
+#### 1. Hero Section
+
+- **Components**: Typography (gradient text), Badge, Card
+- **Layout**: Centered hero with animated text reveal
+- **Interactions**: Subtle parallax on scroll, typewriter effect for subtitle
+
+#### 2. Current State Section  
+
+- **Components**: Card grid, Progress bars, Timeline
+- **Layout**: Stats dashboard with 3-column grid
+- **Features**: Animated counters (90%, 78%, etc.), progress indicators, hover tooltips
+
+#### 3. Pros Section
+
+- **Components**: Cards with icons, Accordion for expandable details
+- **Layout**: 2x2 grid of benefit cards
+- **Interactions**: Hover animations, expand for more details
+
+#### 4. Cons Section
+
+- **Components**: Alert variants, Tabs for categorization
+- **Layout**: Tabbed interface (Skills, Security, Integration, Future)
+- **Features**: Severity indicators, warning icons
+
+#### 5. AI as Scalar Section
+
+- **Components**: Slider, Card, Visual diagram
+- **Layout**: Interactive demonstration with before/after comparison
+- **Interactions**: Drag slider to see skill multiplication effect
+
+#### 6. Context Section
+
+- **Components**: Badge, Card, Counter animation
+- **Layout**: Token visualization with model comparisons
+- **Features**: Animated token counter, context window size comparison
+
+#### 7. Compute Section
+
+- **Components**: Progress meters, Toggle switch, Cards
+- **Layout**: Resource usage dashboard
+- **Interactions**: Toggle between local/API compute modes
+
+#### 8. Context-Compute Relationship
+
+- **Components**: Custom SVG visualization, Cards
+- **Layout**: Interactive matrix or Venn diagram
+- **Features**: Hover to explore relationships
+
+#### 9. MCP Section
+
+- **Components**: Feature cards, Badge, Flow diagram
+- **Layout**: Integration showcase with visual flow
+- **Features**: Connection animations, platform badges
+
+#### 10. Agentic Coding Section
+
+- **Components**: Workflow visualization, Chart component
+- **Layout**: Agent orchestration diagram with growth metrics
+- **Features**: Animated agent interactions, market growth visualization
+
+#### 11. Tool Selection Section
+
+- **Components**: Checkbox cards, Table, Scorecard
+- **Layout**: Interactive criteria checklist
+- **Interactions**: Calculate tool fit score based on selections
+
+#### 12. Preparation Section
+
+- **Components**: Roadmap, Progress indicators, Resource cards
+- **Layout**: Learning path visualization
+- **Features**: Skill tree with progress tracking
+
+#### 13. Conclusion Section
+
+- **Components**: CTA cards, Summary list
+- **Layout**: Action-oriented wrap-up
+- **Features**: Emphasis animations, next steps
+
+### Global Features
+
+- **Navigation**: Sticky header with section progress indicator
+- **Animations**: Framer Motion for smooth transitions
+- **Scroll Effects**: Intersection Observer for reveal animations
+- **Theme**: Dark mode ready with CSS variables
+- **Responsiveness**: Mobile-first design approach
+
+### Implementation Priority
+
+1. Start with Hero and Current State (high visual impact)
+2. Build reusable card and stat components
+3. Add interactive elements (sliders, toggles)
+4. Implement smooth scrolling and navigation
+5. Polish with animations and transitions
