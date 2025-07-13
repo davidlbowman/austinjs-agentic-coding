@@ -8,9 +8,9 @@ import mcp from "astro-mcp";
 
 // https://astro.build/config
 export default defineConfig({
-    integrations: [react(), mcp()],
+	integrations: [react(), mcp()],
 
-    vite: {
-        plugins: [tailwindcss()],
-    },
+	vite: {
+		plugins: [tailwindcss()],
+	},
 });
