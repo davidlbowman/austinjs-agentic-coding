@@ -1,13 +1,4 @@
-import {
-	AlertTriangle,
-	Briefcase,
-	Lock,
-	Puzzle,
-	Shield,
-	Sparkles,
-	Users,
-	Zap,
-} from "lucide-react";
+import { ArrowDown, ArrowRight } from "lucide-react";
 import {
 	Card,
 	CardContent,
@@ -16,114 +7,108 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 
-const benefitsData = [
+const tradeoffs = [
 	{
-		icon: Zap,
-		title: "Increased Productivity",
-		description:
-			"Automates repetitive tasks such as code generation and testing, with some organizations reporting up to 45% reduction in initial code development time, though results vary by project complexity.",
+		benefit: "Increased Productivity",
+		benefitDetail: "45% reduction in development time",
+		cost: "Skill Erosion",
+		costDetail: "Weaker debugging abilities",
 	},
 	{
-		icon: Shield,
-		title: "Improved Code Quality",
-		description:
-			"Detects bugs, vulnerabilities, and inefficiencies early through real-time analysis.",
+		benefit: "Improved Code Quality",
+		benefitDetail: "Early bug detection",
+		cost: "Security Issues",
+		costDetail: "Vulnerable code generation",
 	},
 	{
-		icon: Users,
-		title: "Better Collaboration",
-		description:
-			"Offers data-driven insights and optimizations, aiding team decision-making and knowledge sharing.",
+		benefit: "Better Collaboration",
+		benefitDetail: "Data-driven insights",
+		cost: "Integration Complexity",
+		costDetail: "Steep learning curves",
 	},
 	{
-		icon: Sparkles,
-		title: "Personalized Assistance",
-		description:
-			"Adapts to individual coding styles, accelerating learning and exploration of new technologies.",
-	},
-];
-
-const limitationsData = [
-	{
-		icon: AlertTriangle,
-		title: "Skill Erosion",
-		description:
-			"Overreliance can weaken critical thinking, debugging, and foundational skills if outputs aren't verified, especially when context is mishandled. Developers report declining core programming skills, reduced documentation reading, and weaker debugging abilities, leading some to adopt 'No-AI Days' to maintain fundamentals.",
-	},
-	{
-		icon: Lock,
-		title: "Bias and Security Issues",
-		description:
-			"May propagate biases from training data or introduce vulnerabilities in generated code due to incomplete context.",
-	},
-	{
-		icon: Puzzle,
-		title: "Integration Challenges",
-		description:
-			"Adds complexity with steep learning curves and potential for new bugs in workflows, exacerbated by compute constraints.",
-	},
-	{
-		icon: Briefcase,
-		title: "Job Role Shifts",
-		description:
-			"Could automate routine coding, pushing engineers toward oversight and strategic roles by 2040, with 81% of respondents expecting at least a quarter of development work to shift to AI within five years.",
+		benefit: "Personalized Assistance",
+		benefitDetail: "Adapts to coding styles",
+		cost: "Job Role Shifts",
+		costDetail: "25% work shifting to AI",
 	},
 ];
 
 export function ProsConsSection() {
 	return (
 		<section className="bg-muted/20">
-			<div className="container mx-auto">
+			<div className="container mx-auto max-w-5xl">
 				<h2 className="text-center mb-12">
-					Benefits & Limitations of AI in Software Engineering
+					Benefits & Costs of AI in Software Engineering
 				</h2>
 
-				<div className="grid lg:grid-cols-2 gap-8">
-					{/* Benefits Card */}
-					<Card className="h-full">
-						<CardHeader>
-							<CardTitle className="text-2xl">Benefits</CardTitle>
-							<CardDescription>
-								AI enhances efficiency and innovation, acting as a powerful
-								collaborator despite its limitations.
-							</CardDescription>
-						</CardHeader>
-						<CardContent className="space-y-6">
-							{benefitsData.map((benefit) => (
-								<div key={benefit.title} className="flex gap-4">
-									<benefit.icon className="h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
-									<div className="space-y-1">
-										<h4 className="font-semibold">{benefit.title}</h4>
-										<p className="text-sm">{benefit.description}</p>
-									</div>
-								</div>
-							))}
-						</CardContent>
-					</Card>
+				<Card>
+					<CardHeader>
+						<CardTitle>The Trade-offs</CardTitle>
+						<CardDescription>
+							Every benefit comes with an associated cost that engineers must
+							consider
+						</CardDescription>
+					</CardHeader>
+					<CardContent>
+						{/* Table-like layout */}
+						<div className="overflow-x-auto">
+							<table className="w-full table-fixed">
+								<tbody>
+									{tradeoffs.map((item) => (
+										<tr key={item.benefit} className="border-b last:border-0">
+											{/* Desktop layout */}
+											<td className="py-4 px-2 w-[45%] hidden md:table-cell">
+												<div className="text-green-600 dark:text-green-400 font-semibold">
+													{item.benefit}
+												</div>
+												<div className="text-sm mt-1">{item.benefitDetail}</div>
+											</td>
+											<td className="py-4 px-2 w-[10%] text-center hidden md:table-cell">
+												<ArrowRight className="h-5 w-5 text-muted-foreground inline-block" />
+											</td>
+											<td className="py-4 px-2 w-[45%] text-right hidden md:table-cell">
+												<div className="text-red-600 dark:text-red-400 font-semibold">
+													{item.cost}
+												</div>
+												<div className="text-sm mt-1">{item.costDetail}</div>
+											</td>
 
-					{/* Limitations Card */}
-					<Card className="h-full">
-						<CardHeader>
-							<CardTitle className="text-2xl">Limitations</CardTitle>
-							<CardDescription>
-								While beneficial, AI introduces risks tied to its inherent
-								limitations in context and compute, which engineers must
-								mitigate.
-							</CardDescription>
-						</CardHeader>
-						<CardContent className="space-y-6">
-							{limitationsData.map((limitation) => (
-								<div key={limitation.title} className="flex gap-4">
-									<limitation.icon className="h-5 w-5 text-red-600 dark:text-red-400 flex-shrink-0 mt-0.5" />
-									<div className="space-y-1">
-										<h4 className="font-semibold">{limitation.title}</h4>
-										<p className="text-sm">{limitation.description}</p>
-									</div>
-								</div>
-							))}
-						</CardContent>
-					</Card>
-				</div>
+											{/* Mobile layout */}
+											<td className="py-4 px-2 md:hidden">
+												<div className="text-center space-y-2">
+													<div>
+														<div className="text-green-600 dark:text-green-400 font-semibold">
+															{item.benefit}
+														</div>
+														<div className="text-sm">{item.benefitDetail}</div>
+													</div>
+													<ArrowDown className="h-4 w-4 text-muted-foreground mx-auto" />
+													<div>
+														<div className="text-red-600 dark:text-red-400 font-semibold">
+															{item.cost}
+														</div>
+														<div className="text-sm">{item.costDetail}</div>
+													</div>
+												</div>
+											</td>
+										</tr>
+									))}
+								</tbody>
+							</table>
+						</div>
+
+						<div className="mt-8 p-4 border rounded-lg bg-muted/50">
+							<p className="text-center">
+								<strong>Key Insight:</strong> AI enhances efficiency and
+								innovation, but introduces risks tied to its inherent
+								limitations in{" "}
+								<span className="text-accent-purple">context and compute</span>,
+								which engineers must actively mitigate.
+							</p>
+						</div>
+					</CardContent>
+				</Card>
 			</div>
 		</section>
 	);

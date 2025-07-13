@@ -6,9 +6,7 @@ test.describe("Pros and Cons Section", () => {
 
 		// Check that the pros and cons section exists
 		const prosConsSection = page.locator("section").filter({
-			has: page.getByText(
-				"Benefits & Limitations of AI in Software Engineering",
-			),
+			has: page.getByText("Benefits & Costs of AI in Software Engineering"),
 		});
 		await expect(prosConsSection).toBeVisible();
 	});

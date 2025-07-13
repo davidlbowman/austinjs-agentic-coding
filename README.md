@@ -16,7 +16,7 @@ AI enhances efficiency and innovation, acting as a powerful collaborator despite
 - **Better Collaboration**: Offers data-driven insights and optimizations, aiding team decision-making and knowledge sharing.
 - **Personalized Assistance**: Adapts to individual coding styles, accelerating learning and exploration of new technologies.
 
-## Limitations of AI in Software Engineering
+## Costs of AI in Software Engineering
 
 While beneficial, AI introduces risks tied to its inherent limitations in context and compute, which engineers must mitigate.
 
