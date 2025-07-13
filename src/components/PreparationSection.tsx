@@ -30,7 +30,7 @@ const learningApproach = [
 
 export function PreparationSection() {
 	return (
-		<section className="bg-purple-tint">
+		<section>
 			<div className="container mx-auto">
 				<h2 className="text-center mb-12">
 					Preparing for Expanded Context and Compute

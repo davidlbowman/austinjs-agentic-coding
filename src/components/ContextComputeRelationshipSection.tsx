@@ -1,6 +1,6 @@
 export function ContextComputeRelationshipSection() {
 	return (
-		<section className="bg-purple-tint">
+		<section>
 			<div className="container mx-auto">
 				<h2 className="text-center mb-12">
 					Relationship Between Context and Compute

@@ -36,7 +36,7 @@ const tradeoffs = [
 
 export function ProsConsSection() {
 	return (
-		<section className="bg-purple-tint">
+		<section>
 			<div className="container mx-auto max-w-5xl">
 				<h2 className="text-center mb-12">
 					Benefits & Costs of AI in Software Engineering

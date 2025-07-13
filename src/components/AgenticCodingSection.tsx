@@ -1,6 +1,6 @@
 export function AgenticCodingSection() {
 	return (
-		<section className="bg-purple-tint">
+		<section>
 			<div className="container mx-auto">
 				<h2 className="text-center mb-12">
 					Agentic Coding: Context and Compute

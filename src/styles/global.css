@@ -115,7 +115,7 @@
 		@apply border-border outline-ring/50;
 	}
 	body {
-		@apply bg-background text-foreground;
+		@apply bg-purple-tint text-foreground;
 	}
 	h1 {
 		@apply text-5xl md:text-7xl font-bold tracking-tight;
