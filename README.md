@@ -1,4 +1,4 @@
-<!-- markdownl
+<!-- markdownlint-disable-file MD013 -->
 # AI in Software Engineering: Current State, Pros, Cons, and Tool Selection Guide
 
 This document provides an overview of AI's role in software engineering as of mid-2025, tailored for professional engineers already using AI in their workflows. It focuses on practical insights, including pros and cons, and emphasizes the core limitations of AI—particularly context and compute—as the key factors in tool selection. The main theme is that AI development is fundamentally a game of context and compute: with infinite context and compute, we could achieve nearly anything in software engineering. Tools are chosen based on how well they address these limitations, such as context window size and efficient context utilization.
@@ -7,7 +7,7 @@ This document provides an overview of AI's role in software engineering as of mi
 
 In 2025, AI is deeply integrated into software engineering, with over 90% of engineering teams using AI coding tools, and 78% of organizations either actively using AI or planning to implement it within two years. It has evolved from basic assistance to handling complex tasks like code generation and optimization, boosting productivity in many teams. However, recent studies reveal a nuanced picture: while some report up to 25-30% productivity gains, others find AI can increase completion times by 19% in complex projects. Core limitations like finite context windows and computational constraints mean we're far from "infinite" capabilities, requiring smart tool choices to maximize effectiveness. Challenges such as tool reliability, ethical concerns, and skill erosion persist, demanding careful oversight.
 
-## Pros of AI in Software Engineering
+## Benefits of AI in Software Engineering
 
 AI enhances efficiency and innovation, acting as a powerful collaborator despite its limitations.
 
@@ -16,7 +16,7 @@ AI enhances efficiency and innovation, acting as a powerful collaborator despite
 - **Better Collaboration**: Offers data-driven insights and optimizations, aiding team decision-making and knowledge sharing.
 - **Personalized Assistance**: Adapts to individual coding styles, accelerating learning and exploration of new technologies.
 
-## Cons of AI in Software Engineering
+## Limitations of AI in Software Engineering
 
 While beneficial, AI introduces risks tied to its inherent limitations in context and compute, which engineers must mitigate.
 
