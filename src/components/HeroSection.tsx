@@ -1,4 +1,3 @@
-import { ChevronDown } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 export function HeroSection() {
@@ -36,10 +35,6 @@ export function HeroSection() {
 						they address these limitations.
 					</p>
 				</div>
-			</div>
-
-			<div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-				<ChevronDown className="w-6 h-6 text-muted-foreground animate-bounce" />
 			</div>
 		</section>
 	);
