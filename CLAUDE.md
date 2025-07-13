@@ -227,116 +227,25 @@ bun test:e2e     # Run Playwright E2E tests
 
 Transform the technical README content into an engaging, interactive experience using shadcn/ui components with creative layouts and micro-interactions. Each section should feel distinct while maintaining visual cohesion.
 
-### Section-by-Section Component Mapping
-
-#### 1. Hero Section
-
-- **Components**: Typography (gradient text), Badge, Card
-- **Layout**: Centered hero with animated text reveal
-- **Interactions**: Subtle parallax on scroll, typewriter effect for subtitle
-
-#### 2. Current State Section  
-
-- **Components**: Card grid, Progress bars, Timeline
-- **Layout**: Stats dashboard with 3-column grid
-- **Features**: Animated counters (90%, 78%, etc.), progress indicators, hover tooltips
-
-#### 3. Pros Section
-
-- **Components**: Cards with icons, Accordion for expandable details
-- **Layout**: 2x2 grid of benefit cards
-- **Interactions**: Hover animations, expand for more details
-
-#### 4. Cons Section
-
-- **Components**: Alert variants, Tabs for categorization
-- **Layout**: Tabbed interface (Skills, Security, Integration, Future)
-- **Features**: Severity indicators, warning icons
-
-#### 5. AI as Scalar Section
-
-- **Components**: Slider, Card, Visual diagram
-- **Layout**: Interactive demonstration with before/after comparison
-- **Interactions**: Drag slider to see skill multiplication effect
-
-#### 6. Context Section
-
-- **Components**: Badge, Card, Counter animation
-- **Layout**: Token visualization with model comparisons
-- **Features**: Animated token counter, context window size comparison
-
-#### 7. Compute Section
-
-- **Components**: Progress meters, Toggle switch, Cards
-- **Layout**: Resource usage dashboard
-- **Interactions**: Toggle between local/API compute modes
-
-#### 8. Context-Compute Relationship
-
-- **Components**: Custom SVG visualization, Cards
-- **Layout**: Interactive matrix or Venn diagram
-- **Features**: Hover to explore relationships
-
-#### 9. MCP Section
-
-- **Components**: Feature cards, Badge, Flow diagram
-- **Layout**: Integration showcase with visual flow
-- **Features**: Connection animations, platform badges
-
-#### 10. Agentic Coding Section
-
-- **Components**: Workflow visualization, Chart component
-- **Layout**: Agent orchestration diagram with growth metrics
-- **Features**: Animated agent interactions, market growth visualization
-
-#### 11. Tool Selection Section
-
-- **Components**: Checkbox cards, Table, Scorecard
-- **Layout**: Interactive criteria checklist
-- **Interactions**: Calculate tool fit score based on selections
-
-#### 12. Preparation Section
-
-- **Components**: Roadmap, Progress indicators, Resource cards
-- **Layout**: Learning path visualization
-- **Features**: Skill tree with progress tracking
-
-#### 13. Conclusion Section
-
-- **Components**: CTA cards, Summary list
-- **Layout**: Action-oriented wrap-up
-- **Features**: Emphasis animations, next steps
-
-### Global Features
-
-- **Navigation**: Sticky header with section progress indicator
-- **Animations**: Framer Motion for smooth transitions
-- **Scroll Effects**: Intersection Observer for reveal animations
-- **Theme**: Dark mode ready with CSS variables
-- **Responsiveness**: Mobile-first design approach
-
-### Implementation Priority
-
-1. Start with Hero and Current State (high visual impact)
-2. Build reusable card and stat components
-3. Add interactive elements (sliders, toggles)
-4. Implement smooth scrolling and navigation
-5. Polish with animations and transitions
-
 ### Lessons Learned from Implementation
 
 #### Component Architecture
+
 - **Keep it simple**: No unnecessary state management, avoid useEffect when not needed
 - **Use Astro patterns**: Components need `client:load` directive for interactivity
 - **Import order**: Biome will auto-organize imports (external libs first, then internal)
+- **Section-specific components**: Create one component per content section for clarity
 
 #### Styling Approach
+
 - **Global styles belong in global.css**: Typography (h1, h2), section layouts, utility classes
 - **Use Tailwind defaults**: Prefer `container` class over custom max-widths
 - **Accent colors sparingly**: Only on key phrases, defined as utility classes
 - **Let shadcn handle defaults**: Don't override colors/fonts until final polish
+- **Boring sections pattern**: For text-heavy sections (MCP, Agentic Coding, Conclusion), use simple container + max-width wrapper + paragraphs
 
 #### Global CSS Patterns
+
 ```css
 /* Base layer for semantic elements */
 @layer base {
@@ -356,12 +265,52 @@ Transform the technical README content into an engaging, interactive experience 
 }
 ```
 
+#### Section Design Patterns
+
+1. **Interactive Sections** (Hero, Current State, Pros/Cons, AI Scalar, Context, Compute):
+   - Use cards, badges, and interactive elements
+   - Add visual interest with icons and animations
+   - Create engaging layouts with grids and varied spacing
+
+2. **Text-Heavy "Boring" Sections** (MCP, Agentic Coding, Context-Compute Relationship, Conclusion):
+
+   ```tsx
+   <section>
+     <div className="container mx-auto">
+       <h2 className="text-center mb-12">Section Title</h2>
+       <div className="max-w-4xl mx-auto space-y-4">
+         <p>Content paragraph...</p>
+         <p>Another paragraph...</p>
+       </div>
+     </div>
+   </section>
+   ```
+
+   - Simple container structure
+   - Centered title
+   - Left-aligned paragraphs with max-width constraint
+   - No cards or decorative elements
+
+3. **Mixed Sections** (Preparation):
+   - Combine both approaches
+   - Use cards for actionable items
+   - Plain text for explanatory content
+
 #### Testing Strategy
+
 - **Keep E2E tests minimal**: Just verify sections exist, not specific content
 - **Focus on functionality**: Test interactions when added, not static content
 - **Use semantic queries**: `page.locator('section')` over specific classes
 
 #### Development Workflow
+
 - **Run all checks after changes**: `bun typecheck`, `bun check`, `bun test:e2e`
 - **Let tools auto-fix**: Biome handles formatting, don't fight it
 - **Use MCP tools when needed**: Astro MCP for config, Effect MCP for docs
+
+#### Recent Changes (Session Summary)
+
+1. **Simplified text-heavy sections**: Converted MCP, Agentic Coding, and Conclusion sections to boring paragraph format
+2. **Removed decorative elements**: Eliminated cards and icons from text-heavy sections for better readability
+3. **Standardized layout**: All boring sections now use consistent container/max-width/paragraph structure
+4. **Fixed Context-Compute Relationship**: Removed icon decoration to match boring section style
