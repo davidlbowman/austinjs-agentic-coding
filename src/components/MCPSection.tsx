@@ -31,7 +31,7 @@ export function MCPSection() {
 								standardized, bidirectional interactions—like fetching data from
 								databases or executing functions—without proprietary lock-in.
 							</p>
-							<p className="text-muted-foreground">
+							<p>
 								MCP streamlines how AI accesses and processes information beyond
 								its internal knowledge, making it a critical advancement for
 								scalable AI applications in engineering.
@@ -58,13 +58,13 @@ export function MCPSection() {
 								better lookup tools and integrations, allowing AI to "contract"
 								or compact context needs through efficient external queries.
 							</p>
-							<p className="text-muted-foreground">
+							<p>
 								Instead of overloading a model's internal context window with
 								all data upfront, MCP enables real-time retrieval from sources
 								like files, APIs, or databases, reducing token usage and making
 								context more dynamic.
 							</p>
-							<p className="text-sm text-muted-foreground">
+							<p className="text-sm">
 								For example, an AI tool using MCP can pull specific code
 								snippets or project metadata on demand, enriching responses
 								without exhausting resources.
@@ -86,7 +86,7 @@ export function MCPSection() {
 								tasks to external systems, distributing workload to reduce local
 								machine strain and API latency.
 							</p>
-							<p className="text-muted-foreground">
+							<p>
 								It enables more efficient compute allocation, such as caching
 								frequent queries or parallelizing data fetches, which lowers
 								overall costs and speeds up workflows.
@@ -103,7 +103,7 @@ export function MCPSection() {
 							</CardTitle>
 						</CardHeader>
 						<CardContent>
-							<p className="text-muted-foreground">
+							<p>
 								However, it introduces setup complexity and potential security
 								considerations, as improper configuration could expose sensitive
 								data or increase compute overhead from mismanaged integrations.

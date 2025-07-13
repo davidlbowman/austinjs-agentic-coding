@@ -92,7 +92,7 @@ export function ContextSection() {
 									value={(displayedTokens / MAX_TOKENS) * 100}
 									className="h-3"
 								/>
-								<p className="text-sm text-muted-foreground text-center">
+								<p className="text-sm text-center">
 									{((displayedTokens / MAX_TOKENS) * 100).toFixed(1)}% of Llama
 									4's capacity
 								</p>
@@ -150,7 +150,7 @@ export function ContextSection() {
 										project details, external data) that models use to generate
 										relevant responses.
 									</p>
-									<p className="text-muted-foreground mt-4">
+									<p className="mt-4">
 										Larger context windows have grown dramatically, with models
 										like Gemini 1.5 Pro supporting 2 million tokens and Meta's
 										Llama 4 reaching 10 million tokens, enabling more accurate
@@ -158,7 +158,7 @@ export function ContextSection() {
 										context size and management often result in irrelevant
 										outputs, hallucinations, or errors.
 									</p>
-									<p className="text-muted-foreground mt-4">
+									<p className="mt-4">
 										This is why AI development is a{" "}
 										<span className="text-accent-purple">
 											"context and compute game"
@@ -166,7 +166,7 @@ export function ContextSection() {
 										: finite context restricts the model's "memory," while
 										limited compute power caps processing speed and complexity.
 									</p>
-									<p className="text-sm text-muted-foreground mt-4">
+									<p className="text-sm mt-4">
 										If we had infinite context (unlimited data retention) and
 										compute (endless processing power), AI could handle any
 										engineering task flawlessly, from end-to-end system design

@@ -33,7 +33,7 @@ export function ContextComputeRelationshipSection() {
 								and knowledge) for intelligent outputs, while compute supplies
 								the energy to process and reason over that material.
 							</p>
-							<p className="text-muted-foreground">
+							<p>
 								They form a fundamental trade-off—more context demands more
 								compute to analyze it effectively, and limited compute forces
 								compromises in how much context can be handled without
@@ -88,7 +88,7 @@ export function ContextComputeRelationshipSection() {
 								workarounds such as external lookups or modular agents to
 								stretch capabilities without overwhelming resources.
 							</p>
-							<p className="mt-4 text-muted-foreground">
+							<p className="mt-4">
 								Understanding this interplay helps engineers select tools that
 								minimize these compromises for their specific workflows.
 							</p>

@@ -62,7 +62,7 @@ export function ToolSelectionSection() {
 								<span className="text-accent-purple">compute</span>, tool
 								selection should prioritize how well they address these.
 							</p>
-							<p className="text-muted-foreground mt-4">
+							<p className="mt-4">
 								Your audience, already AI users, can evaluate based on advanced
 								needs like agentic support and MCP compatibility. Here's how to
 								choose:
@@ -80,9 +80,7 @@ export function ToolSelectionSection() {
 									</CardTitle>
 								</CardHeader>
 								<CardContent>
-									<p className="text-sm text-muted-foreground">
-										{criterion.description}
-									</p>
+									<p className="text-sm">{criterion.description}</p>
 								</CardContent>
 							</Card>
 						))}

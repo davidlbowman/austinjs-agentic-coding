@@ -10,9 +10,7 @@ export function HeroSection() {
 
 				<h1>AI in Software Engineering</h1>
 
-				<h2 className="text-muted-foreground">
-					Current State, Pros, Cons, and Tool Selection Guide
-				</h2>
+				<h2>Current State, Pros, Cons, and Tool Selection Guide</h2>
 
 				<p className="text-lg leading-relaxed max-w-3xl mx-auto">
 					This document provides an overview of AI's role in software

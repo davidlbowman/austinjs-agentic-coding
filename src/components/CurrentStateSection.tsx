@@ -46,19 +46,19 @@ export function CurrentStateSection() {
 								like code generation and optimization, boosting productivity in
 								many teams.
 							</p>
-							<p className="text-muted-foreground">
+							<p>
 								However, recent studies reveal a nuanced picture: while some
 								report up to 25-30% productivity gains, others find AI can
 								increase completion times by 19% in complex projects.
 							</p>
-							<p className="text-muted-foreground">
+							<p>
 								Core limitations like finite context windows and computational
 								constraints mean we're far from "infinite" capabilities,
 								requiring smart tool choices to maximize effectiveness.
 							</p>
 							<div className="flex items-start gap-2 p-4 rounded-lg bg-muted/50">
 								<AlertTriangle className="h-5 w-5 text-yellow-600 dark:text-yellow-400 flex-shrink-0 mt-0.5" />
-								<p className="text-sm text-muted-foreground">
+								<p className="text-sm">
 									Challenges such as tool reliability, ethical concerns, and
 									skill erosion persist, demanding careful oversight.
 								</p>
@@ -79,9 +79,7 @@ export function CurrentStateSection() {
 												}`}
 											/>
 											<div className="flex-1 min-w-0">
-												<p className="text-sm text-muted-foreground truncate">
-													{stat.label}
-												</p>
+												<p className="text-sm truncate">{stat.label}</p>
 											</div>
 											<div className="text-xl font-bold">{stat.value}</div>
 										</div>

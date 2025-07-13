@@ -39,7 +39,7 @@ export function AgenticCodingSection() {
 								handle tasks independently or collaboratively, often powered by
 								large language models (LLMs) that execute code-based reasoning.
 							</p>
-							<p className="text-muted-foreground">
+							<p>
 								These agents go beyond simple code generation; they simulate
 								end-to-end engineering workflows, such as planning, coding,
 								testing, and iterating. Tools like Devin exemplify this by
@@ -90,7 +90,7 @@ export function AgenticCodingSection() {
 								optimization—allowing the system to handle more complex problems
 								without hitting single-model token limits.
 							</p>
-							<p className="text-muted-foreground">
+							<p>
 								This parallelism requires greater token generation to maintain
 								synchronization and shared knowledge, increasing demands to
 								prevent inconsistencies. While it overcomes some context
@@ -116,12 +116,12 @@ export function AgenticCodingSection() {
 								straining local machines with high resource usage or escalating
 								API costs for cloud-based agents.
 							</p>
-							<p className="text-muted-foreground">
+							<p>
 								It demands efficient compute distribution to "survive" the
 								expanded scope, such as through optimized orchestration, but can
 								lead to bottlenecks if not managed well.
 							</p>
-							<p className="text-sm text-muted-foreground mt-4">
+							<p className="text-sm mt-4">
 								In the broader "context and compute game," agentic approaches
 								push toward infinite-like capabilities but highlight trade-offs:
 								more agents mean richer context but higher compute costs and

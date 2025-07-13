@@ -94,9 +94,7 @@ export function ProsConsSection() {
 									<benefit.icon className="h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
 									<div className="space-y-1">
 										<h4 className="font-semibold">{benefit.title}</h4>
-										<p className="text-sm text-muted-foreground">
-											{benefit.description}
-										</p>
+										<p className="text-sm">{benefit.description}</p>
 									</div>
 								</div>
 							))}
@@ -119,9 +117,7 @@ export function ProsConsSection() {
 									<limitation.icon className="h-5 w-5 text-red-600 dark:text-red-400 flex-shrink-0 mt-0.5" />
 									<div className="space-y-1">
 										<h4 className="font-semibold">{limitation.title}</h4>
-										<p className="text-sm text-muted-foreground">
-											{limitation.description}
-										</p>
+										<p className="text-sm">{limitation.description}</p>
 									</div>
 								</div>
 							))}

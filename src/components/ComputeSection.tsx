@@ -87,7 +87,7 @@ export function ComputeSection() {
 										models, encompassing both local machine resources and remote
 										APIs.
 									</p>
-									<p className="text-muted-foreground">
+									<p>
 										It determines how quickly and complexly AI can process
 										inputs, generate outputs, and handle tasks like reasoning or
 										optimization. Limitations in compute create bottlenecks that
@@ -226,7 +226,7 @@ export function ComputeSection() {
 								compute, AI could process vast contexts instantaneously,
 								enabling real-time, hyper-complex engineering solutions.
 							</p>
-							<p className="text-muted-foreground mt-4">
+							<p className="mt-4">
 								Tools that optimize compute (e.g., via efficient algorithms or
 								edge computing) are essential to mitigate these constraints.
 							</p>

@@ -61,7 +61,7 @@ export function PreparationSection() {
 								</span>{" "}
 								rather than a substitute.
 							</p>
-							<p className="text-muted-foreground mt-4">
+							<p className="mt-4">
 								To thrive in this evolving landscape, focus on building
 								timeless, foundational abilities that AI can amplify.
 							</p>
@@ -83,14 +83,12 @@ export function PreparationSection() {
 										<skill.icon className="h-5 w-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
 										<div>
 											<h4 className="font-semibold">{skill.title}</h4>
-											<p className="text-sm text-muted-foreground">
-												{skill.description}
-											</p>
+											<p className="text-sm">{skill.description}</p>
 										</div>
 									</div>
 								))}
 							</div>
-							<p className="text-sm text-muted-foreground mt-6">
+							<p className="text-sm mt-6">
 								These form the bedrock that allows AI to enhance your work
 								effectively—without them, AI might simply scale mediocrity.
 							</p>
@@ -139,7 +137,7 @@ export function PreparationSection() {
 									</div>
 								))}
 							</div>
-							<p className="text-sm text-muted-foreground mt-6">
+							<p className="text-sm mt-6">
 								By honing these human-centric skills, you'll position yourself
 								to lead in a future where AI handles the routine, and engineers
 								drive innovation at a higher level.

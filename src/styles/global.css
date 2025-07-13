@@ -122,7 +122,10 @@
 		@apply bg-gradient-to-r from-foreground via-purple-600 to-foreground bg-clip-text text-transparent;
 	}
 	h2 {
-		@apply text-xl md:text-2xl font-medium;
+		@apply text-2xl md:text-3xl font-semibold text-muted-foreground;
+	}
+	p {
+		@apply text-foreground;
 	}
 	.text-accent-purple {
 		@apply text-purple-600 dark:text-purple-400 font-bold;
