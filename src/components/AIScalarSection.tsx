@@ -188,9 +188,28 @@ export function AIScalarSection() {
 								scratch.
 							</p>
 							<p className="mt-4 text-muted-foreground">
-								The key takeaway: AI doesn't replace skill; it scales it. To
-								maximize benefits, invest in building a robust skill base first,
-								then use AI to extend your capabilities.
+								If you're an unskilled engineer, AI can scale up inefficient or
+								error-prone work, potentially leading to amplified mistakes,
+								poor code quality, and compounded issues in projects. For
+								instance, relying on AI without a strong foundation might result
+								in accepting suboptimal suggestions that introduce subtle bugs
+								or inefficient designs, making problems worse at scale.
+							</p>
+							<p className="mt-4 text-muted-foreground">
+								Conversely, if you're highly skilled—with deep knowledge in
+								algorithms, system design, and best practices—AI can greatly
+								enhance your output, enabling faster iteration, more innovative
+								solutions, and higher-quality results. It turns good engineers
+								into exceptional ones by handling rote tasks, allowing focus on
+								high-level strategy and creativity.
+							</p>
+							<p className="mt-4 text-sm text-muted-foreground">
+								The key takeaway is that AI doesn't replace skill; it scales it.
+								To maximize benefits, invest in building a robust skill base
+								first, then use AI to extend your capabilities. This scalar
+								effect underscores the importance of continuous learning and
+								verification, ensuring AI serves as a force multiplier rather
+								than a crutch.
 							</p>
 						</CardContent>
 					</Card>
