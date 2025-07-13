@@ -22,14 +22,6 @@ test.describe("All Sections", () => {
 		});
 		await expect(agenticSection).toBeVisible();
 
-		// Check Tool Selection section
-		const toolSection = page.locator("section").filter({
-			has: page.getByText(
-				"Choosing AI Tools: Criteria for Context and Compute",
-			),
-		});
-		await expect(toolSection).toBeVisible();
-
 		// Check Preparation section
 		const prepSection = page.locator("section").filter({
 			has: page.getByText("Preparing for Expanded Context and Compute"),

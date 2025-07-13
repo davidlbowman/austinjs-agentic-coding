@@ -57,19 +57,6 @@ Agentic coding expands context by distributing it across multiple agents working
 
 Regarding compute, agentic coding intensifies requirements due to parallel processing and real-time coordination, potentially straining local machines with high resource usage or escalating API costs for cloud-based agents. It demands efficient compute distribution to "survive" the expanded scope, such as through optimized orchestration, but can lead to bottlenecks if not managed well. In the broader "context and compute game," agentic approaches push toward infinite-like capabilities but highlight trade-offs: more agents mean richer context but higher compute costs and potential for errors if not orchestrated well.
 
-## Choosing AI Tools: Criteria for Context and Compute
-
-Given that AI's primary limitations are context (window size and usage efficiency) and compute, tool selection should prioritize how well they address these. Your audience, already AI users, can evaluate based on advanced needs like agentic support and MCP compatibility. Here's how to choose:
-
-- **Context Handling**: Favor tools with large windows, efficient token management, and features to expand or compact context (e.g., via lookups). Test how they maintain relevance in large projects without overwhelming compute.
-- **Compute Efficiency**: Select options that optimize processing to handle parallelism or complex queries without excessive costs or delays, balancing local and API-based resources.
-- **MCP Integration**: Choose MCP-compatible tools for seamless external data access, which contracts context needs and boosts scalability.
-- **Agentic Capabilities**: Opt for those supporting multi-agent parallelism to expand context, but ensure they manage token generation effectively to avoid compute bottlenecks.
-- **Privacy and Security**: Prioritize on-device or secure processing to protect sensitive context data.
-- **Integration and Usability**: Ensure easy workflow fit, with low overhead for context setup.
-- **Cost vs. Gains**: Balance subscriptions against productivity boosts (e.g., 25% efficiency), focusing on context/compute ROI.
-- **Ethical Fit**: Pick tools that allow verification to counter skill erosion, with transparency on bias in context handling.
-
 ## Preparing for Expanded Context and Compute
 
 As context windows expand and compute power grows, AI will scale even more dramatically, but it will continue to act as a multiplier of your inherent skills rather than a substitute. To thrive in this evolving landscape, focus on building timeless, foundational abilities that AI can amplify. Key skills include mathematics (for algorithmic thinking and optimization), core software engineering principles (such as those in Donald Knuth's books on algorithms and computing), and mastering technical documentation to understand systems deeply. These form the bedrock that allows AI to enhance your work effectively—without them, AI might simply scale mediocrity.
