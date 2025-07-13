@@ -5,7 +5,7 @@ export function MCPSection() {
 				<h2 className="text-center mb-12">MCP: Context and Compute</h2>
 
 				<div className="max-w-4xl mx-auto space-y-4">
-					<p>
+					<p className="drop-cap">
 						The Model Context Protocol (MCP) is an open standard designed to
 						connect AI models securely to external tools, data sources, and
 						APIs. It functions as a universal interface, enabling standardized,

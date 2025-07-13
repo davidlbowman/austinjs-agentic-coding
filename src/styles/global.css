@@ -39,6 +39,8 @@
 	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
 	--color-sidebar-border: var(--sidebar-border);
 	--color-sidebar-ring: var(--sidebar-ring);
+	--font-sans: var(--font-geist-sans);
+	--font-mono: var(--font-geist-mono);
 }
 
 :root {
@@ -115,14 +117,14 @@
 		@apply border-border outline-ring/50;
 	}
 	body {
-		@apply bg-purple-tint text-foreground;
+		@apply bg-purple-50/50 dark:bg-purple-900/10 text-foreground font-sans;
 	}
 	h1 {
-		@apply text-5xl md:text-7xl font-bold tracking-tight;
+		@apply text-5xl md:text-7xl font-bold tracking-tight font-mono;
 		@apply bg-gradient-to-r from-foreground via-purple-600 to-foreground bg-clip-text text-transparent;
 	}
 	h2 {
-		@apply text-2xl md:text-3xl font-semibold;
+		@apply text-2xl md:text-3xl font-semibold font-mono;
 		@apply bg-gradient-to-r from-foreground via-purple-500 to-foreground bg-clip-text text-transparent;
 	}
 	p {
@@ -140,10 +142,8 @@
 	.text-purple-accent {
 		@apply text-purple-600 dark:text-purple-400 font-bold;
 	}
-	.bg-purple-tint {
-		@apply bg-purple-50/50 dark:bg-purple-900/10;
-	}
-	.bg-purple-highlight {
-		@apply bg-purple-100/70 dark:bg-purple-900/20;
+	.drop-cap::first-letter {
+		@apply float-left text-7xl md:text-8xl font-bold leading-[0.8] mr-2 mt-1;
+		@apply bg-gradient-to-br from-purple-600 to-purple-400 bg-clip-text text-transparent;
 	}
 }

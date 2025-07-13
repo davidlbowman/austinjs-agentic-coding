@@ -13,7 +13,7 @@ export function ContextComputeRelationshipSection() {
 
 					{/* Main content in readable paragraphs */}
 					<div className="space-y-4">
-						<p>
+						<p className="drop-cap">
 							From first principles, context and compute are interdependent
 							forces in AI systems: context provides the raw material (data and
 							knowledge) for intelligent outputs, while compute supplies the

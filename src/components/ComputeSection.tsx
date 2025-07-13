@@ -119,7 +119,7 @@ export function ComputeSection() {
 								{/* Left: Metrics */}
 								<div className="flex flex-col h-full">
 									<div className="space-y-3 flex-1">
-										<div className="flex items-center justify-between p-3 bg-purple-highlight rounded-lg">
+										<div className="flex items-center justify-between p-3 bg-purple-100/70 dark:bg-purple-900/20 rounded-lg">
 											<div className="flex items-center gap-2">
 												<Cpu className="h-4 w-4 text-purple-500 dark:text-purple-400" />
 												<span className="text-sm font-medium">
@@ -131,7 +131,7 @@ export function ComputeSection() {
 											</span>
 										</div>
 
-										<div className="flex items-center justify-between p-3 bg-purple-highlight rounded-lg">
+										<div className="flex items-center justify-between p-3 bg-purple-100/70 dark:bg-purple-900/20 rounded-lg">
 											<div className="flex items-center gap-2">
 												<Gauge className="h-4 w-4 text-purple-500 dark:text-purple-400" />
 												<span className="text-sm font-medium">
@@ -143,7 +143,7 @@ export function ComputeSection() {
 											</span>
 										</div>
 
-										<div className="flex items-center justify-between p-3 bg-purple-highlight rounded-lg">
+										<div className="flex items-center justify-between p-3 bg-purple-100/70 dark:bg-purple-900/20 rounded-lg">
 											<div className="flex items-center gap-2">
 												<DollarSign className="h-4 w-4 text-purple-500 dark:text-purple-400" />
 												<span className="text-sm font-medium">
@@ -157,7 +157,7 @@ export function ComputeSection() {
 									</div>
 
 									{/* Trade-off Indicator */}
-									<div className="p-4 bg-purple-highlight rounded-lg mt-4">
+									<div className="p-4 bg-purple-100/70 dark:bg-purple-900/20 rounded-lg mt-4">
 										<div className="flex items-center gap-2 mb-2">
 											<TrendingDown className="h-4 w-4 text-purple-600 dark:text-purple-400" />
 											<span className="text-sm font-semibold text-purple-600 dark:text-purple-400">
@@ -174,7 +174,7 @@ export function ComputeSection() {
 
 								{/* Right: Capability Description */}
 								<div className="flex flex-col h-full">
-									<div className="p-4 bg-purple-highlight rounded-lg space-y-2 flex-1">
+									<div className="p-4 bg-purple-100/70 dark:bg-purple-900/20 rounded-lg space-y-2 flex-1">
 										<h4 className="font-semibold">AI Capability Level</h4>
 										<p className="text-sm font-medium">{stats.quality}</p>
 										<p className="text-sm text-muted-foreground">
@@ -187,7 +187,7 @@ export function ComputeSection() {
 										<div className="text-sm font-medium mb-2">
 											Effective Context Window
 										</div>
-										<div className="h-24 bg-purple-tint rounded-lg relative overflow-hidden">
+										<div className="h-24 bg-purple-50/50 dark:bg-purple-900/10 rounded-lg relative overflow-hidden">
 											<div
 												className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-purple-600/5 transition-all duration-500"
 												style={{
@@ -245,7 +245,7 @@ export function ComputeSection() {
 							</div>
 
 							{/* Infinite Compute Vision */}
-							<div className="p-4 bg-purple-highlight rounded-lg">
+							<div className="p-4 bg-purple-100/70 dark:bg-purple-900/20 rounded-lg">
 								<div className="flex items-start gap-3">
 									<InfinityIcon className="h-6 w-6 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-1" />
 									<div className="space-y-2">

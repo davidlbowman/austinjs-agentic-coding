@@ -56,7 +56,7 @@ export function CurrentStateSection() {
 								constraints mean we're far from "infinite" capabilities,
 								requiring smart tool choices to maximize effectiveness.
 							</p>
-							<div className="flex items-start gap-2 p-4 rounded-lg bg-purple-highlight">
+							<div className="flex items-start gap-2 p-4 rounded-lg bg-purple-100/70 dark:bg-purple-900/20">
 								<AlertTriangle className="h-5 w-5 text-purple-500 dark:text-purple-400 flex-shrink-0 mt-0.5" />
 								<p className="text-sm">
 									Challenges such as tool reliability, ethical concerns, and

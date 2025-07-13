@@ -5,7 +5,7 @@ export function ConclusionSection() {
 				<h2 className="text-center mb-12">Conclusion</h2>
 
 				<div className="max-w-4xl mx-auto space-y-4">
-					<p>
+					<p className="drop-cap">
 						AI in software engineering is defined by the interplay of{" "}
 						<span className="text-accent-purple">context and compute</span>
 						—mastering these limitations unlocks greater potential, while

@@ -7,7 +7,7 @@ export function AgenticCodingSection() {
 				</h2>
 
 				<div className="max-w-4xl mx-auto space-y-4">
-					<p>
+					<p className="drop-cap">
 						Agentic coding refers to systems where autonomous AI agents handle
 						tasks independently or collaboratively, often powered by large
 						language models (LLMs) that execute code-based reasoning. These

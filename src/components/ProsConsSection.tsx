@@ -98,7 +98,7 @@ export function ProsConsSection() {
 							</table>
 						</div>
 
-						<div className="mt-8 p-4 border rounded-lg bg-purple-highlight">
+						<div className="mt-8 p-4 border rounded-lg bg-purple-100/70 dark:bg-purple-900/20">
 							<p className="text-center">
 								<strong>Key Insight:</strong> AI enhances efficiency and
 								innovation, but introduces risks tied to its inherent

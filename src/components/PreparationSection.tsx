@@ -106,7 +106,7 @@ export function PreparationSection() {
 								<h3 className="text-lg font-semibold mb-4 text-center">
 									How to Learn These Skills
 								</h3>
-								<div className="bg-purple-highlight rounded-lg p-6">
+								<div className="bg-purple-100/70 dark:bg-purple-900/20 rounded-lg p-6">
 									<ul className="space-y-3">
 										{learningApproach.map((approach) => (
 											<li key={approach} className="flex items-start gap-3">
