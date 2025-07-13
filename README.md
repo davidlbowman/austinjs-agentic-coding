@@ -5,13 +5,13 @@ This document provides an overview of AI's role in software engineering as of mi
 
 ## Where We Stand Today
 
-In 2025, AI is deeply integrated into software engineering, with over 80% of organizations using it in development processes. It's evolved from basic assistance to handling complex tasks like code generation and optimization, boosting productivity by 25% or more in many teams. However, core limitations like finite context windows and computational constraints mean we're far from "infinite" capabilities, requiring smart tool choices to maximize effectiveness. Challenges such as tool reliability and ethical concerns persist, demanding careful oversight.
+In 2025, AI is deeply integrated into software engineering, with over 90% of engineering teams using AI coding tools, and 78% of organizations either actively using AI or planning to implement it within two years. It has evolved from basic assistance to handling complex tasks like code generation and optimization, boosting productivity in many teams. However, recent studies reveal a nuanced picture: while some report up to 25-30% productivity gains, others find AI can increase completion times by 19% in complex projects. Core limitations like finite context windows and computational constraints mean we're far from "infinite" capabilities, requiring smart tool choices to maximize effectiveness. Challenges such as tool reliability, ethical concerns, and skill erosion persist, demanding careful oversight.
 
 ## Pros of AI in Software Engineering
 
 AI enhances efficiency and innovation, acting as a powerful collaborator despite its limitations.
 
-- **Increased Productivity**: Automates repetitive tasks such as code generation and testing, reducing development time by 25-30%.
+- **Increased Productivity**: Automates repetitive tasks such as code generation and testing, with some organizations reporting up to 45% reduction in initial code development time, though results vary by project complexity.
 - **Improved Code Quality**: Detects bugs, vulnerabilities, and inefficiencies early through real-time analysis.
 - **Better Collaboration**: Offers data-driven insights and optimizations, aiding team decision-making and knowledge sharing.
 - **Personalized Assistance**: Adapts to individual coding styles, accelerating learning and exploration of new technologies.
@@ -20,14 +20,14 @@ AI enhances efficiency and innovation, acting as a powerful collaborator despite
 
 While beneficial, AI introduces risks tied to its inherent limitations in context and compute, which engineers must mitigate.
 
-- **Skill Erosion**: Overreliance can weaken critical thinking, debugging, and foundational skills if outputs aren't verified, especially when context is mishandled.
+- **Skill Erosion**: Overreliance can weaken critical thinking, debugging, and foundational skills if outputs aren't verified, especially when context is mishandled. Developers report declining core programming skills, reduced documentation reading, and weaker debugging abilities, leading some to adopt "No-AI Days" to maintain fundamentals.
 - **Bias and Security Issues**: May propagate biases from training data or introduce vulnerabilities in generated code due to incomplete context.
 - **Integration Challenges**: Adds complexity with steep learning curves and potential for new bugs in workflows, exacerbated by compute constraints.
-- **Job Role Shifts**: Could automate routine coding, pushing engineers toward oversight and strategic roles by 2040, as context and compute evolve.
+- **Job Role Shifts**: Could automate routine coding, pushing engineers toward oversight and strategic roles by 2040, with 81% of respondents expecting at least a quarter of development work to shift to AI within five years.
 
 ## Context in AI Coding Tools
 
-Context is the cornerstone of AI effectiveness in software engineering—it's the information (e.g., code history, project details, external data) that models use to generate relevant responses. Larger context windows (e.g., millions of tokens) allow AI to consider more data at once, leading to more accurate and project-aware suggestions. However, limitations in context size and management often result in irrelevant outputs, hallucinations, or errors. This is why AI development is a "context and compute game": finite context restricts the model's "memory," while limited compute power caps processing speed and complexity. If we had infinite context (unlimited data retention) and compute (endless processing power), AI could handle any engineering task flawlessly, from end-to-end system design to adaptive optimization. In reality, we choose tools based on how well they expand or optimize context usage, such as through efficient token management or external integrations.
+Context is the cornerstone of AI effectiveness in software engineering—it's the information (e.g., code history, project details, external data) that models use to generate relevant responses. Larger context windows have grown dramatically, with models like Gemini 1.5 Pro supporting 2 million tokens and Meta's Llama 4 reaching 10 million tokens, enabling more accurate and project-aware suggestions. However, limitations in context size and management often result in irrelevant outputs, hallucinations, or errors. This is why AI development is a "context and compute game": finite context restricts the model's "memory," while limited compute power caps processing speed and complexity. If we had infinite context (unlimited data retention) and compute (endless processing power), AI could handle any engineering task flawlessly, from end-to-end system design to adaptive optimization. In reality, we choose tools based on how well they expand or optimize context usage, such as through efficient token management or external integrations.
 
 ## Compute in AI Coding Tools
 
@@ -39,7 +39,7 @@ From first principles, context and compute are interdependent forces in AI syste
 
 ## MCP: Model Context Protocol Explained
 
-The Model Context Protocol (MCP) is an open standard designed to connect AI models securely to external tools, data sources, and APIs. It functions as a universal interface, enabling standardized, bidirectional interactions—like fetching data from databases or executing functions—without proprietary lock-in. MCP streamlines how AI accesses and processes information beyond its internal knowledge, making it a critical advancement for scalable AI applications in engineering.
+The Model Context Protocol (MCP) is an open standard designed to connect AI models securely to external tools, data sources, and APIs. It functions as a universal interface, enabling standardized, bidirectional interactions—like fetching data from databases or executing functions—without proprietary lock-in. MCP streamlines how AI accesses and processes information beyond its internal knowledge, making it a critical advancement for scalable AI applications in engineering. Major tools like GitHub Copilot and platforms such as Windows 11 and Google DeepMind's Gemini models now support MCP.
 
 ## How MCP Affects Context and Compute
 
@@ -49,7 +49,7 @@ On the compute side, MCP optimizes processing by offloading tasks to external sy
 
 ## Agentic Coding Explained
 
-Agentic coding refers to systems where autonomous AI agents handle tasks independently or collaboratively, often powered by large language models (LLMs) that execute code-based reasoning. These agents go beyond simple code generation; they simulate end-to-end engineering workflows, such as planning, coding, testing, and iterating. Tools like Devin exemplify this by acting as virtual software engineers capable of managing full projects through modular, goal-oriented behaviors.
+Agentic coding refers to systems where autonomous AI agents handle tasks independently or collaboratively, often powered by large language models (LLMs) that execute code-based reasoning. These agents go beyond simple code generation; they simulate end-to-end engineering workflows, such as planning, coding, testing, and iterating. Tools like Devin exemplify this by acting as virtual software engineers capable of managing full projects through modular, goal-oriented behaviors. The global agentic AI market is rapidly growing, expected to increase from $28 billion in 2024 to $127 billion by 2029, with 25% of enterprises deploying AI agents by 2025.
 
 ## How Agentic Coding Affects Context and Compute
 
