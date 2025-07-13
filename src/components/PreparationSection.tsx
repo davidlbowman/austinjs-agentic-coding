@@ -1,11 +1,5 @@
-import { BookOpen, Brain, Code, Users } from "lucide-react";
-import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardHeader,
-	CardTitle,
-} from "@/components/ui/card";
+import { BookOpen, Brain, Check, Code } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const foundationalSkills = [
 	{
@@ -31,14 +25,7 @@ const learningApproach = [
 	"Debug manually",
 	"Iterate through trial and error to internalize concepts",
 	"Avoid over-relying on AI for learning",
-	"Use AI sparingly after building a strong base",
-];
-
-const futureRoles = [
-	"Prompt engineering",
-	"Evaluating AI outputs critically",
-	"Orchestrating multi-agent systems",
-	"Integrating human intuition with machine efficiency",
+	"Use AI sparingly after building a strong base through deliberate practice and self-directed study",
 ];
 
 export function PreparationSection() {
@@ -49,109 +36,87 @@ export function PreparationSection() {
 					Preparing for Expanded Context and Compute
 				</h2>
 
-				<div className="max-w-4xl mx-auto space-y-8">
-					{/* Introduction */}
-					<Card>
-						<CardContent className="pt-6">
-							<p className="text-lg">
-								As context windows expand and compute power grows, AI will scale
-								even more dramatically, but it will continue to act as a{" "}
-								<span className="text-accent-purple">
-									multiplier of your inherent skills
-								</span>{" "}
-								rather than a substitute.
-							</p>
-							<p className="mt-4">
-								To thrive in this evolving landscape, focus on building
-								timeless, foundational abilities that AI can amplify.
-							</p>
-						</CardContent>
-					</Card>
-
-					{/* Foundational Skills */}
+				<div className="max-w-5xl mx-auto">
 					<Card>
 						<CardHeader>
-							<CardTitle>Key Foundational Skills</CardTitle>
-							<CardDescription>
-								The bedrock that allows AI to enhance your work effectively
-							</CardDescription>
+							<CardTitle>Building Skills That AI Can Amplify</CardTitle>
 						</CardHeader>
-						<CardContent>
+						<CardContent className="space-y-8">
+							{/* Introduction paragraphs from README */}
 							<div className="space-y-4">
-								{foundationalSkills.map((skill) => (
-									<div key={skill.title} className="flex gap-4">
-										<skill.icon className="h-5 w-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
-										<div>
-											<h4 className="font-semibold">{skill.title}</h4>
-											<p className="text-sm">{skill.description}</p>
+								<p>
+									As context windows expand and compute power grows, AI will
+									scale even more dramatically, but it will continue to act as a
+									multiplier of your inherent skills rather than a substitute.
+									To thrive in this evolving landscape, focus on building
+									timeless, foundational abilities that AI can amplify. Key
+									skills include mathematics (for algorithmic thinking and
+									optimization), core software engineering principles (such as
+									those in Donald Knuth's books on algorithms and computing),
+									and mastering technical documentation to understand systems
+									deeply. These form the bedrock that allows AI to enhance your
+									work effectively—without them, AI might simply scale
+									mediocrity.
+								</p>
+
+								<p>
+									Learning these skills requires hands-on practice, not passive
+									AI assistance: type the code yourself, debug manually, and
+									iterate through trial and error to internalize concepts. Avoid
+									over-relying on AI for learning; instead, use it sparingly
+									after building a strong base through deliberate practice and
+									self-directed study. As we transition into roles as "AI
+									managers," emphasize strategic oversight—prompt engineering,
+									evaluating AI outputs critically, orchestrating multi-agent
+									systems, and integrating human intuition with machine
+									efficiency. By honing these human-centric skills, you'll
+									position yourself to lead in a future where AI handles the
+									routine, and engineers drive innovation at a higher level.
+									Always remember: AI scales what you input, so invest in
+									elevating your expertise to maximize its potential.
+								</p>
+							</div>
+
+							{/* Foundational Skills - 3 columns */}
+							<div className="pt-6 border-t">
+								<h3 className="text-lg font-semibold mb-6 text-center">
+									Key Foundational Skills
+								</h3>
+								<div className="grid md:grid-cols-3 gap-6">
+									{foundationalSkills.map((skill) => (
+										<div key={skill.title} className="text-center space-y-3">
+											<div className="flex justify-center">
+												<div className="p-3 bg-purple-100 dark:bg-purple-900/20 rounded-lg">
+													<skill.icon className="h-8 w-8 text-purple-600 dark:text-purple-400" />
+												</div>
+											</div>
+											<div>
+												<h4 className="font-semibold">{skill.title}</h4>
+												<p className="text-sm text-muted-foreground mt-1">
+													{skill.description}
+												</p>
+											</div>
 										</div>
-									</div>
-								))}
+									))}
+								</div>
 							</div>
-							<p className="text-sm mt-6">
-								These form the bedrock that allows AI to enhance your work
-								effectively—without them, AI might simply scale mediocrity.
-							</p>
-						</CardContent>
-					</Card>
 
-					{/* Learning Approach */}
-					<Card>
-						<CardHeader>
-							<CardTitle>Learning These Skills</CardTitle>
-							<CardDescription>
-								Hands-on practice, not passive AI assistance
-							</CardDescription>
-						</CardHeader>
-						<CardContent>
-							<ul className="space-y-2">
-								{learningApproach.map((approach) => (
-									<li key={approach} className="text-sm flex items-start gap-2">
-										<span className="text-green-600 dark:text-green-400 mt-0.5">
-											•
-										</span>
-										<span className="text-muted-foreground">{approach}</span>
-									</li>
-								))}
-							</ul>
-						</CardContent>
-					</Card>
-
-					{/* Future Roles */}
-					<Card>
-						<CardHeader>
-							<CardTitle className="flex items-center gap-2">
-								<Users className="h-5 w-5" />
-								Transitioning to "AI Managers"
-							</CardTitle>
-							<CardDescription>Emphasize strategic oversight</CardDescription>
-						</CardHeader>
-						<CardContent>
-							<div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-								{futureRoles.map((role) => (
-									<div
-										key={role}
-										className="text-sm p-3 bg-muted/50 rounded-md"
-									>
-										{role}
-									</div>
-								))}
+							{/* Learning Approach - Checklist */}
+							<div className="pt-6 border-t">
+								<h3 className="text-lg font-semibold mb-4 text-center">
+									How to Learn These Skills
+								</h3>
+								<div className="bg-muted/50 rounded-lg p-6">
+									<ul className="space-y-3">
+										{learningApproach.map((approach) => (
+											<li key={approach} className="flex items-start gap-3">
+												<Check className="h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
+												<span className="text-sm">{approach}</span>
+											</li>
+										))}
+									</ul>
+								</div>
 							</div>
-							<p className="text-sm mt-6">
-								By honing these human-centric skills, you'll position yourself
-								to lead in a future where AI handles the routine, and engineers
-								drive innovation at a higher level.
-							</p>
-						</CardContent>
-					</Card>
-
-					{/* Key Takeaway */}
-					<Card>
-						<CardContent className="pt-6">
-							<p className="text-lg font-medium text-center">
-								Always remember: AI scales what you input, so invest in
-								elevating your expertise to maximize its potential.
-							</p>
 						</CardContent>
 					</Card>
 				</div>
