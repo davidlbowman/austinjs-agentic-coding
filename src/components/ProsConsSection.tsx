@@ -36,7 +36,7 @@ const tradeoffs = [
 
 export function ProsConsSection() {
 	return (
-		<section className="bg-muted/20">
+		<section className="bg-purple-tint">
 			<div className="container mx-auto max-w-5xl">
 				<h2 className="text-center mb-12">
 					Benefits & Costs of AI in Software Engineering
@@ -65,7 +65,7 @@ export function ProsConsSection() {
 												<div className="text-sm mt-1">{item.benefitDetail}</div>
 											</td>
 											<td className="py-4 px-2 w-[10%] text-center hidden md:table-cell">
-												<ArrowRight className="h-5 w-5 text-muted-foreground inline-block" />
+												<ArrowRight className="h-5 w-5 text-purple-500 dark:text-purple-400 inline-block" />
 											</td>
 											<td className="py-4 px-2 w-[45%] text-right hidden md:table-cell">
 												<div className="text-red-600 dark:text-red-400 font-semibold">
@@ -83,7 +83,7 @@ export function ProsConsSection() {
 														</div>
 														<div className="text-sm">{item.benefitDetail}</div>
 													</div>
-													<ArrowDown className="h-4 w-4 text-muted-foreground mx-auto" />
+													<ArrowDown className="h-4 w-4 text-purple-500 dark:text-purple-400 mx-auto" />
 													<div>
 														<div className="text-red-600 dark:text-red-400 font-semibold">
 															{item.cost}
@@ -98,7 +98,7 @@ export function ProsConsSection() {
 							</table>
 						</div>
 
-						<div className="mt-8 p-4 border rounded-lg bg-muted/50">
+						<div className="mt-8 p-4 border rounded-lg bg-purple-highlight">
 							<p className="text-center">
 								<strong>Key Insight:</strong> AI enhances efficiency and
 								innovation, but introduces risks tied to its inherent

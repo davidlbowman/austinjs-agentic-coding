@@ -84,7 +84,7 @@ export function ContextSection() {
 	const Icon = currentStage.icon;
 
 	return (
-		<section className="bg-muted/20">
+		<section className="bg-purple-tint">
 			<div className="container mx-auto">
 				<h2 className="text-center mb-12">Context in AI Coding Tools</h2>
 

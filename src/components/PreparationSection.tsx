@@ -30,7 +30,7 @@ const learningApproach = [
 
 export function PreparationSection() {
 	return (
-		<section className="bg-muted/20">
+		<section className="bg-purple-tint">
 			<div className="container mx-auto">
 				<h2 className="text-center mb-12">
 					Preparing for Expanded Context and Compute
@@ -106,11 +106,11 @@ export function PreparationSection() {
 								<h3 className="text-lg font-semibold mb-4 text-center">
 									How to Learn These Skills
 								</h3>
-								<div className="bg-muted/50 rounded-lg p-6">
+								<div className="bg-purple-highlight rounded-lg p-6">
 									<ul className="space-y-3">
 										{learningApproach.map((approach) => (
 											<li key={approach} className="flex items-start gap-3">
-												<Check className="h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
+												<Check className="h-5 w-5 text-purple-500 dark:text-purple-400 flex-shrink-0 mt-0.5" />
 												<span className="text-sm">{approach}</span>
 											</li>
 										))}

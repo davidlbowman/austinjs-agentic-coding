@@ -22,7 +22,7 @@ export function HeroSection() {
 					factors in tool selection.
 				</p>
 
-				<div className="max-w-2xl mx-auto p-6 rounded-lg bg-muted/30 border">
+				<div className="max-w-2xl mx-auto p-6 rounded-lg bg-purple-highlight border">
 					<p className="text-base">
 						The main theme is that AI development is fundamentally a{" "}
 						<span className="text-accent-purple">

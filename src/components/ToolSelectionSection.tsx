@@ -75,7 +75,7 @@ export function ToolSelectionSection() {
 							<Card key={criterion.title}>
 								<CardHeader className="pb-3">
 									<CardTitle className="text-lg flex items-center gap-2">
-										<Check className="h-4 w-4 text-green-600 dark:text-green-400" />
+										<Check className="h-4 w-4 text-purple-500 dark:text-purple-400" />
 										{criterion.title}
 									</CardTitle>
 								</CardHeader>
