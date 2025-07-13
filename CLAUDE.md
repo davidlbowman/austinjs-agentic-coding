@@ -322,3 +322,46 @@ Transform the technical README content into an engaging, interactive experience 
 3. Add interactive elements (sliders, toggles)
 4. Implement smooth scrolling and navigation
 5. Polish with animations and transitions
+
+### Lessons Learned from Implementation
+
+#### Component Architecture
+- **Keep it simple**: No unnecessary state management, avoid useEffect when not needed
+- **Use Astro patterns**: Components need `client:load` directive for interactivity
+- **Import order**: Biome will auto-organize imports (external libs first, then internal)
+
+#### Styling Approach
+- **Global styles belong in global.css**: Typography (h1, h2), section layouts, utility classes
+- **Use Tailwind defaults**: Prefer `container` class over custom max-widths
+- **Accent colors sparingly**: Only on key phrases, defined as utility classes
+- **Let shadcn handle defaults**: Don't override colors/fonts until final polish
+
+#### Global CSS Patterns
+```css
+/* Base layer for semantic elements */
+@layer base {
+  h1 {
+    @apply text-5xl md:text-7xl font-bold tracking-tight;
+    @apply bg-gradient-to-r from-foreground via-purple-600 to-foreground bg-clip-text text-transparent;
+  }
+  h2 {
+    @apply text-xl md:text-2xl font-medium;
+  }
+  section {
+    @apply min-h-[90vh] flex items-center justify-center px-4 relative;
+  }
+  .text-accent-purple {
+    @apply text-purple-600 dark:text-purple-400 font-bold;
+  }
+}
+```
+
+#### Testing Strategy
+- **Keep E2E tests minimal**: Just verify sections exist, not specific content
+- **Focus on functionality**: Test interactions when added, not static content
+- **Use semantic queries**: `page.locator('section')` over specific classes
+
+#### Development Workflow
+- **Run all checks after changes**: `bun typecheck`, `bun check`, `bun test:e2e`
+- **Let tools auto-fix**: Biome handles formatting, don't fight it
+- **Use MCP tools when needed**: Astro MCP for config, Effect MCP for docs
