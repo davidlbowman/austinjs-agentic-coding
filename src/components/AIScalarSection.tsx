@@ -72,39 +72,49 @@ const skillLevels = [
 ];
 
 export function AIScalarSection() {
-	const [skillValue, setSkillValue] = useState([50]);
+	const [skillValue, setSkillValue] = useState(50);
 
 	const currentSkill = skillLevels.reduce((acc, skill) => {
-		if (skillValue[0] >= skill.level) return skill;
+		if (skillValue >= skill.level) return skill;
 		return acc;
 	}, skillLevels[0]);
 
-	const nextSkill = skillLevels.find((skill) => skill.level > skillValue[0]);
-	const progress = nextSkill
-		? ((skillValue[0] - currentSkill.level) /
-				(nextSkill.level - currentSkill.level)) *
-			100
-		: 100;
+	// Calculate productivity metrics based on multiplier
+	const baseProductivity = {
+		featuresPerWeek: 1,
+		linesOfCode: 500,
+		bugsFixed: 3,
+	};
+
+	const scaledProductivity = {
+		featuresPerWeek: Math.round(
+			baseProductivity.featuresPerWeek * currentSkill.multiplier,
+		),
+		linesOfCode: Math.round(
+			baseProductivity.linesOfCode * currentSkill.multiplier,
+		),
+		bugsFixed: Math.round(baseProductivity.bugsFixed * currentSkill.multiplier),
+	};
 
 	return (
 		<section>
 			<div className="container mx-auto">
 				<h2 className="text-center mb-12">AI as a Scalar to Productivity</h2>
 
-				<div className="max-w-4xl mx-auto space-y-8">
+				<div className="max-w-5xl mx-auto">
 					<Card>
 						<CardHeader>
 							<CardTitle>Skill Level Impact on AI Effectiveness</CardTitle>
 						</CardHeader>
-						<CardContent className="space-y-6">
+						<CardContent className="space-y-8">
 							<div className="space-y-2">
 								<div className="flex justify-between text-sm">
 									<span>Your Skill Level</span>
-									<span className="font-mono">{skillValue[0]}%</span>
+									<span className="font-mono">{skillValue}%</span>
 								</div>
 								<Slider
-									value={skillValue}
-									onValueChange={setSkillValue}
+									defaultValue={[50]}
+									onValueChange={(value) => setSkillValue(value[0])}
 									max={100}
 									step={1}
 									className="w-full"
@@ -155,60 +165,76 @@ export function AIScalarSection() {
 								</div>
 							</div>
 
-							{nextSkill && (
-								<div className="pt-4 border-t">
-									<div className="flex justify-between items-center mb-2">
-										<span className="text-sm font-medium">
-											Progress to {nextSkill.title}
-										</span>
-										<span className="text-sm text-muted-foreground">
-											{Math.round(progress)}%
-										</span>
+							<div className="pt-6 border-t">
+								<h4 className="text-sm font-medium mb-4">
+									Productivity Output (per week)
+								</h4>
+								<div className="grid grid-cols-3 gap-4 text-center">
+									<div>
+										<div className="text-2xl font-bold">
+											{scaledProductivity.featuresPerWeek}
+										</div>
+										<div className="text-xs text-muted-foreground">
+											Features
+										</div>
 									</div>
-									<div className="h-2 bg-muted rounded-full overflow-hidden">
-										<div
-											className="h-full bg-gradient-to-r from-purple-600 to-blue-600 transition-all duration-300"
-											style={{ width: `${progress}%` }}
-										/>
+									<div>
+										<div className="text-2xl font-bold">
+											{scaledProductivity.linesOfCode.toLocaleString()}
+										</div>
+										<div className="text-xs text-muted-foreground">
+											Lines of Code
+										</div>
+									</div>
+									<div>
+										<div className="text-2xl font-bold">
+											{scaledProductivity.bugsFixed}
+										</div>
+										<div className="text-xs text-muted-foreground">
+											Bugs Fixed
+										</div>
 									</div>
 								</div>
-							)}
-						</CardContent>
-					</Card>
+								<div className="mt-3 text-xs text-muted-foreground text-center">
+									Base productivity (1x) scaled by AI multiplier (
+									{currentSkill.multiplier}x)
+								</div>
+							</div>
 
-					<Card>
-						<CardContent className="pt-6">
-							<p className="text-lg">
-								AI acts as a{" "}
-								<span className="text-accent-purple">scalar multiplier</span> to
-								your existing productivity and skills, amplifying what you
-								already bring to the table rather than creating expertise from
-								scratch.
-							</p>
-							<p className="mt-4">
-								If you're an unskilled engineer, AI can scale up inefficient or
-								error-prone work, potentially leading to amplified mistakes,
-								poor code quality, and compounded issues in projects. For
-								instance, relying on AI without a strong foundation might result
-								in accepting suboptimal suggestions that introduce subtle bugs
-								or inefficient designs, making problems worse at scale.
-							</p>
-							<p className="mt-4">
-								Conversely, if you're highly skilled—with deep knowledge in
-								algorithms, system design, and best practices—AI can greatly
-								enhance your output, enabling faster iteration, more innovative
-								solutions, and higher-quality results. It turns good engineers
-								into exceptional ones by handling rote tasks, allowing focus on
-								high-level strategy and creativity.
-							</p>
-							<p className="mt-4 text-sm">
-								The key takeaway is that AI doesn't replace skill; it scales it.
-								To maximize benefits, invest in building a robust skill base
-								first, then use AI to extend your capabilities. This scalar
-								effect underscores the importance of continuous learning and
-								verification, ensuring AI serves as a force multiplier rather
-								than a crutch.
-							</p>
+							<div className="pt-6 border-t space-y-4">
+								<p>
+									AI acts as a{" "}
+									<span className="text-accent-purple">scalar multiplier</span>{" "}
+									to your existing productivity and skills, amplifying what you
+									already bring to the table rather than creating expertise from
+									scratch.
+								</p>
+								<p>
+									If you're an unskilled engineer, AI can scale up inefficient
+									or error-prone work, potentially leading to amplified
+									mistakes, poor code quality, and compounded issues in
+									projects. For instance, relying on AI without a strong
+									foundation might result in accepting suboptimal suggestions
+									that introduce subtle bugs or inefficient designs, making
+									problems worse at scale.
+								</p>
+								<p>
+									Conversely, if you're highly skilled—with deep knowledge in
+									algorithms, system design, and best practices—AI can greatly
+									enhance your output, enabling faster iteration, more
+									innovative solutions, and higher-quality results. It turns
+									good engineers into exceptional ones by handling rote tasks,
+									allowing focus on high-level strategy and creativity.
+								</p>
+								<p>
+									The key takeaway is that AI doesn't replace skill; it scales
+									it. To maximize benefits, invest in building a robust skill
+									base first, then use AI to extend your capabilities. This
+									scalar effect underscores the importance of continuous
+									learning and verification, ensuring AI serves as a force
+									multiplier rather than a crutch.
+								</p>
+							</div>
 						</CardContent>
 					</Card>
 				</div>
