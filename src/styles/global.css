@@ -120,15 +120,24 @@
 		@apply bg-purple-50/50 dark:bg-purple-900/10 text-foreground font-sans;
 	}
 	h1 {
-		@apply text-5xl md:text-7xl font-bold tracking-tight font-mono;
+		@apply text-5xl font-bold tracking-tighter sm:text-6xl xl:text-7xl/none font-mono;
 		@apply bg-gradient-to-r from-foreground via-purple-600 to-foreground bg-clip-text text-transparent;
 	}
 	h2 {
-		@apply text-2xl md:text-3xl font-semibold font-mono;
+		@apply text-3xl font-bold tracking-tighter sm:text-4xl xl:text-5xl font-mono;
 		@apply bg-gradient-to-r from-foreground via-purple-500 to-foreground bg-clip-text text-transparent;
 	}
+	h3 {
+		@apply text-2xl font-bold sm:text-3xl xl:text-4xl font-mono;
+		@apply bg-gradient-to-r from-foreground via-purple-500 to-foreground bg-clip-text text-transparent;
+	}
+	h4,
+	h5,
+	h6 {
+		@apply font-mono font-semibold;
+	}
 	p {
-		@apply text-foreground;
+		@apply text-lg text-foreground;
 	}
 	.text-accent-purple {
 		@apply text-purple-600 dark:text-purple-400 font-bold;
