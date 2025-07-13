@@ -247,20 +247,49 @@ Transform the technical README content into an engaging, interactive experience 
 #### Global CSS Patterns
 
 ```css
+/* Tailwind theme configuration */
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  /* Other theme variables... */
+}
+
 /* Base layer for semantic elements */
 @layer base {
+  body {
+    @apply bg-purple-50/50 dark:bg-purple-900/10 text-foreground font-sans;
+  }
   h1 {
-    @apply text-5xl md:text-7xl font-bold tracking-tight;
+    @apply text-5xl font-bold tracking-tighter sm:text-6xl xl:text-7xl/none font-mono;
     @apply bg-gradient-to-r from-foreground via-purple-600 to-foreground bg-clip-text text-transparent;
   }
   h2 {
-    @apply text-xl md:text-2xl font-medium;
+    @apply text-3xl font-bold tracking-tighter sm:text-4xl xl:text-5xl font-mono;
+    @apply bg-gradient-to-r from-foreground via-purple-500 to-foreground bg-clip-text text-transparent;
+  }
+  h3 {
+    @apply text-2xl font-bold sm:text-3xl xl:text-4xl font-mono;
+    @apply bg-gradient-to-r from-foreground via-purple-500 to-foreground bg-clip-text text-transparent;
+  }
+  h4, h5, h6 {
+    @apply font-mono font-semibold;
+  }
+  p {
+    @apply text-lg text-foreground;
   }
   section {
-    @apply min-h-[90vh] flex items-center justify-center px-4 relative;
+    @apply py-16 px-4;
   }
+}
+
+/* Utility classes */
+@layer utilities {
   .text-accent-purple {
     @apply text-purple-600 dark:text-purple-400 font-bold;
+  }
+  .drop-cap::first-letter {
+    @apply float-left text-7xl md:text-8xl font-bold leading-[0.8] mr-2 mt-1;
+    @apply bg-gradient-to-br from-purple-600 to-purple-400 bg-clip-text text-transparent;
   }
 }
 ```
@@ -310,7 +339,36 @@ Transform the technical README content into an engaging, interactive experience 
 
 #### Recent Changes (Session Summary)
 
+**Previous Session**:
 1. **Simplified text-heavy sections**: Converted MCP, Agentic Coding, and Conclusion sections to boring paragraph format
 2. **Removed decorative elements**: Eliminated cards and icons from text-heavy sections for better readability
 3. **Standardized layout**: All boring sections now use consistent container/max-width/paragraph structure
 4. **Fixed Context-Compute Relationship**: Removed icon decoration to match boring section style
+
+**Current Session - Purple Theme & Typography**:
+
+1. **Updated H2 styling**: Added gradient effect similar to H1 using `via-purple-500`
+2. **Implemented purple color scheme**: 
+   - Near-black purple for main text
+   - Off-white purple backgrounds using OKLCH color space
+   - Updated all CSS variables in both light and dark modes
+3. **Updated icon colors**: Changed all icons to use `text-purple-500 dark:text-purple-400`
+4. **Background improvements**:
+   - Added global purple-tinted background to body
+   - Removed individual section backgrounds
+   - Created consistent purple-tinted backgrounds for cards/highlights
+5. **Font implementation using Astro's experimental fonts API**:
+   - Configured Geist Sans and Geist Mono via `fontProviders.fontsource()`
+   - Added Font components to page head with preload
+   - Defined `--font-sans` and `--font-mono` in Tailwind theme
+   - Body text uses Geist Sans, all headers use Geist Mono
+6. **Typography improvements**:
+   - H1: `text-5xl sm:text-6xl xl:text-7xl` with gradient
+   - H2: `text-3xl sm:text-4xl xl:text-5xl` with gradient
+   - H3: `text-2xl sm:text-3xl xl:text-4xl` with gradient
+   - H4-H6: Geist Mono with semibold weight
+   - All paragraphs: `text-lg` minimum
+7. **Drop caps implementation**:
+   - Added `.drop-cap::first-letter` utility class
+   - Applied to first paragraphs in text-heavy sections
+   - Purple gradient styling for drop caps
