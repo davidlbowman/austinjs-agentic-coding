@@ -1,5 +1,5 @@
-import { Brain, Database, Infinity as InfinityIcon } from "lucide-react";
-import { useEffect, useState } from "react";
+import { AlertCircle, Brain, Code, FileCode, Sparkles } from "lucide-react";
+import { useState } from "react";
 import {
 	Card,
 	CardContent,
@@ -7,59 +7,81 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
+import { Slider } from "@/components/ui/slider";
 
-const modelContextData = [
+const contextStages = [
 	{
-		name: "GPT-4 (base)",
-		tokens: 8192,
-		color: "bg-green-600",
-		description: "Standard context window",
+		size: 1000,
+		label: "Single File",
+		description: "Perfect understanding",
+		aiQuality: 100,
+		example:
+			"AI can refactor functions, fix bugs, and suggest optimizations perfectly",
+		icon: FileCode,
+		color: "text-green-600 dark:text-green-400",
+		bgColor: "bg-green-100 dark:bg-green-900/20",
 	},
 	{
-		name: "Claude 3",
-		tokens: 200000,
-		color: "bg-purple-600",
-		description: "Extended conversations",
+		size: 10000,
+		label: "Small Module",
+		description: "Strong comprehension",
+		aiQuality: 85,
+		example:
+			"AI understands module relationships and can make cross-file changes",
+		icon: Code,
+		color: "text-blue-600 dark:text-blue-400",
+		bgColor: "bg-blue-100 dark:bg-blue-900/20",
 	},
 	{
-		name: "Gemini 1.5 Pro",
-		tokens: 2000000,
-		color: "bg-blue-600",
-		description: "Massive document processing",
+		size: 50000,
+		label: "Medium Project",
+		description: "Partial context loss",
+		aiQuality: 60,
+		example: "AI starts missing dependencies, suggests incomplete solutions",
+		icon: Brain,
+		color: "text-yellow-600 dark:text-yellow-400",
+		bgColor: "bg-yellow-100 dark:bg-yellow-900/20",
 	},
 	{
-		name: "Llama 4",
-		tokens: 10000000,
-		color: "bg-orange-600",
-		description: "Project-scale context",
+		size: 200000,
+		label: "Large Codebase",
+		description: "Significant degradation",
+		aiQuality: 35,
+		example: "AI frequently hallucinates imports, misses critical context",
+		icon: AlertCircle,
+		color: "text-orange-600 dark:text-orange-400",
+		bgColor: "bg-orange-100 dark:bg-orange-900/20",
+	},
+	{
+		size: 1000000,
+		label: "Enterprise System",
+		description: "Context overwhelmed",
+		aiQuality: 15,
+		example: "AI provides generic suggestions, can't grasp system architecture",
+		icon: AlertCircle,
+		color: "text-red-600 dark:text-red-400",
+		bgColor: "bg-red-100 dark:bg-red-900/20",
 	},
 ];
 
-const MAX_TOKENS = 10000000;
-
 export function ContextSection() {
-	const [displayedTokens, setDisplayedTokens] = useState(0);
-	const targetTokens = 2500000; // Animated counter target
+	const [contextSize, setContextSize] = useState(10000);
 
-	useEffect(() => {
-		const duration = 2000; // 2 seconds
-		const steps = 60;
-		const increment = targetTokens / steps;
-		let current = 0;
+	// Find the current stage based on context size
+	const currentStage = contextStages.reduce((acc, stage) => {
+		if (contextSize >= stage.size) return stage;
+		return acc;
+	}, contextStages[0]);
 
-		const timer = setInterval(() => {
-			current += increment;
-			if (current >= targetTokens) {
-				setDisplayedTokens(targetTokens);
-				clearInterval(timer);
-			} else {
-				setDisplayedTokens(Math.floor(current));
-			}
-		}, duration / steps);
+	// Calculate AI effectiveness based on context size
+	const calculateEffectiveness = (size: number) => {
+		// Exponential decay function
+		const decay = Math.exp(-size / 50000);
+		return Math.max(5, Math.min(100, decay * 100));
+	};
 
-		return () => clearInterval(timer);
-	}, []);
+	const effectiveness = calculateEffectiveness(contextSize);
+	const Icon = currentStage.icon;
 
 	return (
 		<section className="bg-muted/20">
@@ -67,114 +89,132 @@ export function ContextSection() {
 				<h2 className="text-center mb-12">Context in AI Coding Tools</h2>
 
 				<div className="max-w-5xl mx-auto space-y-8">
-					{/* Token Counter Card */}
+					{/* Interactive Context Simulator */}
 					<Card>
 						<CardHeader>
-							<CardTitle className="flex items-center gap-2">
-								<Brain className="h-5 w-5" />
-								Current Context Usage
-							</CardTitle>
+							<CardTitle>Context Size vs AI Effectiveness</CardTitle>
 							<CardDescription>
-								Simulating a typical development session
+								See how AI performance degrades as your codebase grows
 							</CardDescription>
 						</CardHeader>
-						<CardContent>
+						<CardContent className="space-y-8">
+							{/* Slider */}
 							<div className="space-y-4">
-								<div className="text-center">
-									<div className="text-4xl font-mono font-bold">
-										{displayedTokens.toLocaleString()}
-									</div>
-									<div className="text-sm text-muted-foreground">
-										tokens used
-									</div>
+								<div className="flex justify-between text-sm">
+									<span>Codebase Size</span>
+									<span className="font-mono">
+										{contextSize.toLocaleString()} tokens
+									</span>
 								</div>
-								<Progress
-									value={(displayedTokens / MAX_TOKENS) * 100}
-									className="h-3"
+								<Slider
+									defaultValue={[10000]}
+									max={1000000}
+									min={1000}
+									step={1000}
+									onValueChange={(value) => setContextSize(value[0])}
+									className="w-full"
 								/>
-								<p className="text-sm text-center">
-									{((displayedTokens / MAX_TOKENS) * 100).toFixed(1)}% of Llama
-									4's capacity
-								</p>
+								<div className="flex justify-between text-xs text-muted-foreground">
+									<span>1K (Single file)</span>
+									<span>1M (Enterprise)</span>
+								</div>
 							</div>
-						</CardContent>
-					</Card>
 
-					{/* Model Comparison */}
-					<Card>
-						<CardHeader>
-							<CardTitle className="flex items-center gap-2">
-								<Database className="h-5 w-5" />
-								Context Window Evolution
-							</CardTitle>
-							<CardDescription>
-								How model context windows have grown dramatically
-							</CardDescription>
-						</CardHeader>
-						<CardContent className="space-y-4">
-							{modelContextData.map((model) => (
-								<div key={model.name} className="space-y-2">
-									<div className="flex justify-between items-center">
-										<div>
-											<div className="font-medium">{model.name}</div>
-											<div className="text-sm text-muted-foreground">
-												{model.description}
+							{/* Current Stage Display */}
+							<div className={`p-6 rounded-lg ${currentStage.bgColor}`}>
+								<div className="flex items-start gap-4">
+									<Icon
+										className={`h-8 w-8 ${currentStage.color} flex-shrink-0`}
+									/>
+									<div className="space-y-2 flex-1">
+										<div className="flex items-center justify-between">
+											<h3
+												className={`text-lg font-semibold ${currentStage.color}`}
+											>
+												{currentStage.label}
+											</h3>
+											<div className="text-right">
+												<div className="text-2xl font-bold">
+													{Math.round(effectiveness)}%
+												</div>
+												<div className="text-xs text-muted-foreground">
+													AI Effectiveness
+												</div>
 											</div>
 										</div>
-										<div className="text-sm font-mono">
-											{model.tokens.toLocaleString()} tokens
-										</div>
+										<p className="text-sm font-medium">
+											{currentStage.description}
+										</p>
+										<p className="text-sm text-muted-foreground">
+											{currentStage.example}
+										</p>
 									</div>
-									<div className="h-2 bg-muted rounded-full overflow-hidden">
+								</div>
+
+								{/* Effectiveness Bar */}
+								<div className="mt-4">
+									<div className="h-3 bg-muted rounded-full overflow-hidden">
 										<div
-											className={`h-full ${model.color} transition-all duration-1000`}
-											style={{
-												width: `${(model.tokens / MAX_TOKENS) * 100}%`,
-											}}
+											className={`h-full ${
+												effectiveness > 70
+													? "bg-green-600"
+													: effectiveness > 40
+														? "bg-yellow-600"
+														: "bg-red-600"
+											} transition-all duration-300`}
+											style={{ width: `${effectiveness}%` }}
 										/>
 									</div>
 								</div>
-							))}
-						</CardContent>
-					</Card>
+							</div>
 
-					{/* Key Insight */}
-					<Card>
-						<CardContent className="pt-6">
-							<div className="flex items-start gap-4">
-								<InfinityIcon className="h-8 w-8 text-purple-600 dark:text-purple-400 flex-shrink-0" />
-								<div className="space-y-2">
-									<p className="text-lg">
-										Context is the cornerstone of AI effectiveness in software
-										engineering—it's the information (e.g., code history,
-										project details, external data) that models use to generate
-										relevant responses.
-									</p>
-									<p className="mt-4">
-										Larger context windows have grown dramatically, with models
-										like Gemini 1.5 Pro supporting 2 million tokens and Meta's
-										Llama 4 reaching 10 million tokens, enabling more accurate
-										and project-aware suggestions. However, limitations in
-										context size and management often result in irrelevant
-										outputs, hallucinations, or errors.
-									</p>
-									<p className="mt-4">
-										This is why AI development is a{" "}
-										<span className="text-accent-purple">
-											"context and compute game"
-										</span>
-										: finite context restricts the model's "memory," while
-										limited compute power caps processing speed and complexity.
-									</p>
-									<p className="text-sm mt-4">
-										If we had infinite context (unlimited data retention) and
-										compute (endless processing power), AI could handle any
-										engineering task flawlessly, from end-to-end system design
-										to adaptive optimization. In reality, we choose tools based
-										on how well they expand or optimize context usage, such as
-										through efficient token management or external integrations.
-									</p>
-								</div>
+							{/* Context Stages Grid */}
+							<div className="grid grid-cols-5 gap-2 pt-4">
+								{contextStages.map((stage) => (
+									<div
+										key={stage.label}
+										className={`text-center p-2 rounded-lg transition-all ${
+											contextSize >= stage.size
+												? stage.bgColor
+												: "bg-muted/50 opacity-50"
+										}`}
+									>
+										<div className="text-xs font-medium">{stage.label}</div>
+										<div className="text-xs text-muted-foreground mt-1">
+											{stage.aiQuality}%
+										</div>
+									</div>
+								))}
+							</div>
+
+							{/* Key Insight within same card */}
+							<div className="pt-6 border-t space-y-4">
+								<p>
+									Context is the cornerstone of AI effectiveness—it's the
+									information that models use to generate relevant responses. As
+									codebases grow, AI's ability to maintain understanding
+									degrades exponentially.
+								</p>
+								<p>
+									This is why AI development is a{" "}
+									<span className="text-accent-purple">
+										"context and compute game"
+									</span>
+									. With finite context windows, even the most advanced models
+									struggle with large codebases. They miss dependencies,
+									hallucinate imports, and provide increasingly generic
+									suggestions.
+								</p>
+								<p className="font-semibold">
+									If we had infinite context, AI could maintain perfect
+									understanding of any codebase size, enabling flawless
+									end-to-end system design and implementation.
+								</p>
+								<p>
+									In reality, we choose tools based on how well they expand or
+									optimize context usage through efficient token management,
+									external integrations, and smart caching strategies.
+								</p>
 							</div>
 						</CardContent>
 					</Card>
