@@ -117,4 +117,23 @@
 	body {
 		@apply bg-background text-foreground;
 	}
+	h1 {
+		@apply text-5xl md:text-7xl font-bold tracking-tight;
+		@apply bg-gradient-to-r from-foreground via-purple-600 to-foreground bg-clip-text text-transparent;
+	}
+	h2 {
+		@apply text-xl md:text-2xl font-medium;
+	}
+	.text-accent-purple {
+		@apply text-purple-600 dark:text-purple-400 font-bold;
+	}
+	section {
+		@apply min-h-[90vh] flex items-center justify-center px-4 relative;
+	}
+}
+
+@layer utilities {
+	.text-purple-accent {
+		@apply text-purple-600 dark:text-purple-400 font-bold;
+	}
 }

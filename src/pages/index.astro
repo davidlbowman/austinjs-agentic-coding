@@ -1,5 +1,5 @@
 ---
-import { Button } from "@/components/ui/button";
+import { HeroSection } from "@/components/HeroSection";
 import "@/styles/global.css";
 ---
 
@@ -9,12 +9,13 @@ import "@/styles/global.css";
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro + TailwindCSS</title>
+		<title>AI in Software Engineering | AustinJS</title>
+		<meta name="description" content="A comprehensive guide to AI in software engineering, focusing on context and compute limitations, tool selection, and best practices for professional engineers." />
 	</head>
 
 	<body>
-    <div class="grid place-items-center h-screen content-center">
-			<Button>Button</Button>
-		</div>
+		<main>
+			<HeroSection client:load />
+		</main>
 	</body>
 </html>
