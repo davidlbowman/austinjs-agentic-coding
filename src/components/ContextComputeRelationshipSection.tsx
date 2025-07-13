@@ -1,12 +1,7 @@
-import { ArrowLeftRight } from "lucide-react";
-
 export function ContextComputeRelationshipSection() {
 	return (
 		<section className="bg-muted/20">
 			<div className="container mx-auto">
-				<div className="flex justify-center mb-4">
-					<ArrowLeftRight className="h-6 w-6 text-muted-foreground" />
-				</div>
 				<h2 className="text-center mb-12">
 					Relationship Between Context and Compute
 				</h2>
