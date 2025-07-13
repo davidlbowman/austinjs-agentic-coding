@@ -1,4 +1,4 @@
-import { AlertCircle, Brain, Code, FileCode, Sparkles } from "lucide-react";
+import { AlertCircle, Brain, Code, FileCode } from "lucide-react";
 import { useState } from "react";
 import {
 	Card,
