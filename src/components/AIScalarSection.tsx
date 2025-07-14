@@ -171,7 +171,7 @@ export function AIScalarSection() {
 								</h4>
 								<div className="grid grid-cols-3 gap-4 text-center">
 									<div>
-										<div className="text-2xl font-bold">
+										<div className="text-2xl font-bold text-purple-600 dark:text-purple-400">
 											{scaledProductivity.featuresPerWeek}
 										</div>
 										<div className="text-xs text-muted-foreground">
@@ -179,7 +179,7 @@ export function AIScalarSection() {
 										</div>
 									</div>
 									<div>
-										<div className="text-2xl font-bold">
+										<div className="text-2xl font-bold text-purple-500 dark:text-purple-300">
 											{scaledProductivity.linesOfCode.toLocaleString()}
 										</div>
 										<div className="text-xs text-muted-foreground">
@@ -187,7 +187,7 @@ export function AIScalarSection() {
 										</div>
 									</div>
 									<div>
-										<div className="text-2xl font-bold">
+										<div className="text-2xl font-bold text-purple-700 dark:text-purple-500">
 											{scaledProductivity.bugsFixed}
 										</div>
 										<div className="text-xs text-muted-foreground">
