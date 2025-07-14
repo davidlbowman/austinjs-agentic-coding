@@ -133,13 +133,13 @@ export function ContextSection() {
 										className={`h-8 w-8 ${currentStage.color} flex-shrink-0`}
 									/>
 									<div className="space-y-2 flex-1">
-										<div className="flex items-center justify-between">
+										<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
 											<h3
 												className={`text-lg font-semibold ${currentStage.color}`}
 											>
 												{currentStage.label}
 											</h3>
-											<div className="text-right">
+											<div className="text-left sm:text-right">
 												<div className="text-2xl font-bold">
 													{Math.round(effectiveness)}%
 												</div>
