@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowRight } from "lucide-react";
+import { ArrowDown, ArrowRight, CheckCircle, XCircle } from "lucide-react";
 import {
 	Card,
 	CardContent,
@@ -59,36 +59,58 @@ export function ProsConsSection() {
 										<tr key={item.benefit} className="border-b last:border-0">
 											{/* Desktop layout */}
 											<td className="py-4 px-2 w-[45%] hidden md:table-cell">
-												<div className="text-green-600 dark:text-green-400 font-semibold">
-													{item.benefit}
+												<div className="flex items-start gap-2">
+													<CheckCircle className="h-5 w-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
+													<div>
+														<div className="text-purple-600 dark:text-purple-400 font-semibold">
+															{item.benefit}
+														</div>
+														<div className="text-sm mt-1">
+															{item.benefitDetail}
+														</div>
+													</div>
 												</div>
-												<div className="text-sm mt-1">{item.benefitDetail}</div>
 											</td>
 											<td className="py-4 px-2 w-[10%] text-center hidden md:table-cell">
 												<ArrowRight className="h-5 w-5 text-purple-500 dark:text-purple-400 inline-block" />
 											</td>
-											<td className="py-4 px-2 w-[45%] text-right hidden md:table-cell">
-												<div className="text-red-600 dark:text-red-400 font-semibold">
-													{item.cost}
+											<td className="py-4 px-2 w-[45%] hidden md:table-cell">
+												<div className="flex items-start gap-2 justify-end">
+													<div className="text-right">
+														<div className="text-purple-500/60 dark:text-purple-400/60 font-semibold">
+															{item.cost}
+														</div>
+														<div className="text-sm mt-1">
+															{item.costDetail}
+														</div>
+													</div>
+													<XCircle className="h-5 w-5 text-purple-500/60 dark:text-purple-400/60 flex-shrink-0 mt-0.5" />
 												</div>
-												<div className="text-sm mt-1">{item.costDetail}</div>
 											</td>
 
 											{/* Mobile layout */}
 											<td className="py-4 px-2 md:hidden">
-												<div className="text-center space-y-2">
-													<div>
-														<div className="text-green-600 dark:text-green-400 font-semibold">
-															{item.benefit}
+												<div className="text-center space-y-3">
+													<div className="flex items-start gap-2 justify-center">
+														<CheckCircle className="h-5 w-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
+														<div>
+															<div className="text-purple-600 dark:text-purple-400 font-semibold">
+																{item.benefit}
+															</div>
+															<div className="text-sm">
+																{item.benefitDetail}
+															</div>
 														</div>
-														<div className="text-sm">{item.benefitDetail}</div>
 													</div>
 													<ArrowDown className="h-4 w-4 text-purple-500 dark:text-purple-400 mx-auto" />
-													<div>
-														<div className="text-red-600 dark:text-red-400 font-semibold">
-															{item.cost}
+													<div className="flex items-start gap-2 justify-center">
+														<XCircle className="h-5 w-5 text-purple-500/60 dark:text-purple-400/60 flex-shrink-0 mt-0.5" />
+														<div>
+															<div className="text-purple-500/60 dark:text-purple-400/60 font-semibold">
+																{item.cost}
+															</div>
+															<div className="text-sm">{item.costDetail}</div>
 														</div>
-														<div className="text-sm">{item.costDetail}</div>
 													</div>
 												</div>
 											</td>
