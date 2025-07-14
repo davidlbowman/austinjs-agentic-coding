@@ -1,4 +1,10 @@
-import { AlertCircle, Brain, Code, FileCode } from "lucide-react";
+import {
+	AlertCircle,
+	AlertTriangle,
+	Brain,
+	Code,
+	FileCode,
+} from "lucide-react";
 import { useState } from "react";
 import {
 	Card,
@@ -18,8 +24,8 @@ const contextStages = [
 		example:
 			"AI can refactor functions, fix bugs, and suggest optimizations perfectly",
 		icon: FileCode,
-		color: "text-green-600 dark:text-green-400",
-		bgColor: "bg-green-100 dark:bg-green-900/20",
+		color: "text-purple-400 dark:text-purple-300",
+		bgColor: "bg-purple-50 dark:bg-purple-900/10",
 	},
 	{
 		size: 10000,
@@ -29,8 +35,8 @@ const contextStages = [
 		example:
 			"AI understands module relationships and can make cross-file changes",
 		icon: Code,
-		color: "text-blue-600 dark:text-blue-400",
-		bgColor: "bg-blue-100 dark:bg-blue-900/20",
+		color: "text-purple-500 dark:text-purple-400",
+		bgColor: "bg-purple-100 dark:bg-purple-900/20",
 	},
 	{
 		size: 50000,
@@ -39,8 +45,8 @@ const contextStages = [
 		aiQuality: 60,
 		example: "AI starts missing dependencies, suggests incomplete solutions",
 		icon: Brain,
-		color: "text-yellow-600 dark:text-yellow-400",
-		bgColor: "bg-yellow-100 dark:bg-yellow-900/20",
+		color: "text-purple-600 dark:text-purple-500",
+		bgColor: "bg-purple-200 dark:bg-purple-900/30",
 	},
 	{
 		size: 200000,
@@ -49,8 +55,8 @@ const contextStages = [
 		aiQuality: 35,
 		example: "AI frequently hallucinates imports, misses critical context",
 		icon: AlertCircle,
-		color: "text-orange-600 dark:text-orange-400",
-		bgColor: "bg-orange-100 dark:bg-orange-900/20",
+		color: "text-purple-700 dark:text-purple-600",
+		bgColor: "bg-purple-300 dark:bg-purple-900/40",
 	},
 	{
 		size: 1000000,
@@ -58,9 +64,9 @@ const contextStages = [
 		description: "Context overwhelmed",
 		aiQuality: 15,
 		example: "AI provides generic suggestions, can't grasp system architecture",
-		icon: AlertCircle,
-		color: "text-red-600 dark:text-red-400",
-		bgColor: "bg-red-100 dark:bg-red-900/20",
+		icon: AlertTriangle,
+		color: "text-purple-800 dark:text-purple-600",
+		bgColor: "bg-purple-400 dark:bg-purple-900/50",
 	},
 ];
 
@@ -155,14 +161,16 @@ export function ContextSection() {
 								<div className="mt-4">
 									<div className="h-3 bg-muted rounded-full overflow-hidden">
 										<div
-											className={`h-full ${
+											className={`h-full transition-all duration-300 ${
 												effectiveness > 70
-													? "bg-green-600"
+													? "bg-purple-400 dark:bg-purple-300"
 													: effectiveness > 40
-														? "bg-yellow-600"
-														: "bg-red-600"
-											} transition-all duration-300`}
-											style={{ width: `${effectiveness}%` }}
+														? "bg-purple-500 dark:bg-purple-400"
+														: "bg-purple-700 dark:bg-purple-600"
+											}`}
+											style={{
+												width: `${effectiveness}%`,
+											}}
 										/>
 									</div>
 								</div>
