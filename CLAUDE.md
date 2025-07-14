@@ -5,7 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-A single-page static site about agentic coding, teaching people how to use multiple agents simultaneously with Claude Code and GitHub CLI. Built with Astro v5.11.0, React, Tailwind CSS v4, shadcn/ui components, and Effect for functional programming patterns.
+A single-page static site about agentic coding, teaching people how to use multiple agents simultaneously with Claude Code and GitHub CLI. Built with Astro v5.11.0, React, Tailwind CSS v4, and shadcn/ui components.
 
 ## Common Commands
 
@@ -50,13 +50,12 @@ bun add <pkg>    # Add new dependency
 - **Package Manager**: Bun
 - **Code Quality**: Biome for formatting and linting
 - **Testing**: Playwright for E2E tests (multi-browser: Chrome, Firefox, Edge, Mobile)
-- **Functional Programming**: Effect for type-safe functions
 
 ### Project Structure
 
 - `src/pages/` - Astro pages (file-based routing)
 - `src/components/ui/` - shadcn/ui components
-- `src/lib/` - Utility functions and Effect-based logic
+- `src/lib/` - Utility functions
   - `utils.ts` - Includes `cn()` for className merging
 - `src/styles/global.css` - Global styles with Tailwind directives and CSS variables
 - `e2e/` - Playwright E2E tests (files must end with `-e2e.ts`)
@@ -75,7 +74,7 @@ bun add <pkg>    # Add new dependency
 
 ### Core Philosophy
 
-**React and Shadcn take priority in ALL cases**. Use Effect only for type-safe utility functions and data transformations.
+**React and Shadcn take priority in ALL cases**.
 
 ### Component Development
 
@@ -91,33 +90,6 @@ bun add <pkg>    # Add new dependency
     condition && "conditional-classes"
   )} />
   ```
-
-### Using Effect for Functions
-
-When implementing utility functions or data transformations:
-
-```typescript
-import { Effect, Schema } from "effect"
-
-const InputSchema = Schema.Struct({
-  field1: Schema.String,
-  field2: Schema.Number
-})
-
-export const processData = (input: unknown) =>
-  Effect.gen(function* () {
-    const validated = yield* Schema.decode(InputSchema)(input)
-    return transformedResult
-  })
-
-const handleAction = async () => {
-  const result = await Effect.runPromise(
-    processData(data).pipe(
-      Effect.catchAll(() => Effect.succeed(defaultValue))
-    )
-  )
-}
-```
 
 ### CSS Architecture
 
@@ -156,30 +128,6 @@ test.describe('Feature Name', () => {
 - Be specific with selectors when multiple elements exist
 - Use `await expect()` for auto-retrying assertions
 
-### Effect Function Testing
-
-```typescript
-import { expect, test } from "bun:test"
-import { Effect } from "effect"
-import { someFunction } from "@/lib/functions"
-
-test("should process data correctly", async () => {
-  const result = await Effect.runPromise(
-    someFunction({ input: "test" })
-  )
-  
-  expect(result).toEqual(expectedOutput)
-})
-
-test("should handle errors", async () => {
-  const result = await Effect.runPromise(
-    someFunction({ invalid: "input" }).pipe(Effect.flip)
-  )
-  
-  expect(result).toBeInstanceOf(ExpectedError)
-})
-```
-
 ## MCP Tools Setup
 
 The project is designed to demonstrate MCP (Model Context Protocol) tools integration. Future setup will include tools for enhanced development workflows.
@@ -210,7 +158,6 @@ bun test:e2e     # Run Playwright E2E tests
 ## Important Notes
 
 - **Static Site Focus**: This is a single-page site - avoid overcomplicating
-- **Effect Usage**: Only use Effect for utility functions, not component logic
 - **Testing Output**: Playwright tests must use text reporter for readability
 - **No Backend**: This is a static site with no server-side logic
 - **Educational Purpose**: Code should be clear and demonstrate best practices for teaching
@@ -342,7 +289,7 @@ Transform the technical README content into an engaging, interactive experience 
 
 - **Run all checks after changes**: `bun typecheck`, `bun check`, `bun test:e2e`
 - **Let tools auto-fix**: Biome handles formatting, don't fight it
-- **Use MCP tools when needed**: Astro MCP for config, Effect MCP for docs
+- **Use MCP tools when needed**: Astro MCP for config
 
 #### Recent Changes (Session Summary)
 
