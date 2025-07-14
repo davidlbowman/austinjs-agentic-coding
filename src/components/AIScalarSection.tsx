@@ -15,7 +15,7 @@ const skillLevels = [
 			"Creates inefficient designs",
 			"Compounds technical debt",
 		],
-		color: "text-red-600 dark:text-red-400",
+		color: "text-purple-400 dark:text-purple-300",
 	},
 	{
 		level: 25,
@@ -28,7 +28,7 @@ const skillLevels = [
 			"Some quality improvements",
 			"Learning acceleration",
 		],
-		color: "text-orange-600 dark:text-orange-400",
+		color: "text-purple-500 dark:text-purple-400",
 	},
 	{
 		level: 50,
@@ -41,7 +41,7 @@ const skillLevels = [
 			"Improves code consistency",
 			"Enables rapid prototyping",
 		],
-		color: "text-yellow-600 dark:text-yellow-400",
+		color: "text-purple-600 dark:text-purple-500",
 	},
 	{
 		level: 75,
@@ -54,7 +54,7 @@ const skillLevels = [
 			"Rapid iteration cycles",
 			"Enhanced creativity",
 		],
-		color: "text-green-600 dark:text-green-400",
+		color: "text-purple-700 dark:text-purple-600",
 	},
 	{
 		level: 100,
@@ -67,7 +67,7 @@ const skillLevels = [
 			"Drives innovation",
 			"Maximizes AI potential",
 		],
-		color: "text-blue-600 dark:text-blue-400",
+		color: "text-purple-800 dark:text-purple-700",
 	},
 ];
 
@@ -128,7 +128,7 @@ export function AIScalarSection() {
 									</h3>
 									<p className="text-sm">{currentSkill.description}</p>
 									<div className="flex items-center gap-2">
-										<span className="text-2xl font-bold">
+										<span className="text-2xl font-bold text-purple-600 dark:text-purple-400">
 											{currentSkill.multiplier}x
 										</span>
 										<span className="text-sm text-muted-foreground">
@@ -148,8 +148,8 @@ export function AIScalarSection() {
 												<span
 													className={`mt-1 ${
 														currentSkill.multiplier > 1
-															? "text-green-600 dark:text-green-400"
-															: "text-red-600 dark:text-red-400"
+															? "text-purple-600 dark:text-purple-400"
+															: "text-purple-400 dark:text-purple-300"
 													}`}
 												>
 													{currentSkill.multiplier > 1 ? (
