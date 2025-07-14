@@ -175,9 +175,10 @@ export function ContextSection() {
 
 							<div className="grid grid-cols-6 sm:grid-cols-5 gap-2 pt-4 auto-rows-fr">
 								{contextStages.map((stage, index) => (
-									<div
+									<button
 										key={stage.label}
-										className={`text-center p-2 rounded-lg transition-all h-full min-h-[60px] flex flex-col justify-center ${
+										onClick={() => setContextSize(stage.size)}
+										className={`text-center p-2 rounded-lg transition-all h-full min-h-[60px] flex flex-col justify-center cursor-pointer hover:scale-105 ${
 											contextSize >= stage.size
 												? stage.bgColor
 												: "bg-muted/50 opacity-50"
@@ -191,7 +192,7 @@ export function ContextSection() {
 										<div className="text-xs text-muted-foreground mt-1">
 											{stage.aiQuality}%
 										</div>
-									</div>
+									</button>
 								))}
 							</div>
 
