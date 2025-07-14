@@ -7,10 +7,6 @@ export function ContextComputeRelationshipSection() {
 				</h2>
 
 				<div className="max-w-4xl mx-auto space-y-6">
-					<p className="text-lg text-center font-medium mb-8">
-						Context provides the raw material, compute supplies the energy
-					</p>
-
 					{/* Main content in readable paragraphs */}
 					<div className="space-y-4">
 						<p className="drop-cap">
