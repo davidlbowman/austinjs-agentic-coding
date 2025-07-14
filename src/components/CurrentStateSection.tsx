@@ -37,7 +37,7 @@ export function CurrentStateSection() {
 				</h2>
 
 				<div className="max-w-5xl mx-auto">
-					<div className="grid lg:grid-cols-2 gap-12 items-start">
+					<div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
 						{/* Left side - description */}
 						<div className="space-y-4">
 							<p className="text-lg">
@@ -68,9 +68,9 @@ export function CurrentStateSection() {
 						{/* Right side - Stats cards */}
 						<div className="space-y-3">
 							{statsData.map((stat) => (
-								<Card key={stat.label}>
-									<CardContent>
-										<div className="flex items-center gap-4">
+								<Card key={stat.label} className="overflow-hidden">
+									<CardContent className="p-4">
+										<div className="flex items-center gap-3">
 											<stat.icon
 												className={`h-5 w-5 flex-shrink-0 ${
 													stat.positive
@@ -78,10 +78,12 @@ export function CurrentStateSection() {
 														: "text-purple-500/70 dark:text-purple-400/70"
 												}`}
 											/>
-											<div className="flex-1 min-w-0">
-												<p className="text-sm truncate">{stat.label}</p>
+											<div className="flex-1 min-w-0 overflow-hidden">
+												<p className="text-sm break-words">{stat.label}</p>
 											</div>
-											<div className="text-xl font-bold">{stat.value}</div>
+											<div className="text-lg lg:text-xl font-bold flex-shrink-0">
+												{stat.value}
+											</div>
 										</div>
 									</CardContent>
 								</Card>
