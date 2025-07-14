@@ -147,12 +147,12 @@ export function AIScalarSection() {
 											>
 												<span
 													className={`mt-1 ${
-														currentSkill.multiplier >= 2
+														currentSkill.multiplier > 1
 															? "text-green-600 dark:text-green-400"
 															: "text-red-600 dark:text-red-400"
 													}`}
 												>
-													{currentSkill.multiplier >= 2 ? (
+													{currentSkill.multiplier > 1 ? (
 														<ArrowUp className="h-3 w-3" />
 													) : (
 														<ArrowDown className="h-3 w-3" />
