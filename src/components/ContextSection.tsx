@@ -42,7 +42,7 @@ const contextStages = [
 		size: 200000,
 		label: "Medium Project",
 		description: "Partial context loss",
-		aiQuality: 60,
+		aiQuality: 75,
 		example: "AI starts missing dependencies, suggests incomplete solutions",
 		icon: Brain,
 		color: "text-purple-500/80 dark:text-purple-400/80",
@@ -52,7 +52,7 @@ const contextStages = [
 		size: 500000,
 		label: "Large Codebase",
 		description: "Significant degradation",
-		aiQuality: 35,
+		aiQuality: 60,
 		example: "AI frequently hallucinates imports, misses critical context",
 		icon: AlertCircle,
 		color: "text-purple-600 dark:text-purple-500",
@@ -62,7 +62,7 @@ const contextStages = [
 		size: 1000000,
 		label: "Enterprise System",
 		description: "Context overwhelmed",
-		aiQuality: 15,
+		aiQuality: 35,
 		example: "AI provides generic suggestions, can't grasp system architecture",
 		icon: AlertTriangle,
 		color: "text-purple-700 dark:text-purple-600",
@@ -81,9 +81,13 @@ export function ContextSection() {
 
 	// Calculate AI effectiveness based on context size
 	const calculateEffectiveness = (size: number) => {
-		// Exponential decay function adjusted for new ranges
-		const decay = Math.exp(-size / 150000);
-		return Math.max(5, Math.min(100, decay * 100));
+		// Map size to effectiveness based on our stages
+		if (size <= 1000) return 100;
+		if (size <= 50000) return 85 + (15 * (50000 - size)) / 49000;
+		if (size <= 200000) return 75 + (10 * (200000 - size)) / 150000;
+		if (size <= 500000) return 60 + (15 * (500000 - size)) / 300000;
+		if (size <= 1000000) return 35 + (25 * (1000000 - size)) / 500000;
+		return 35;
 	};
 
 	const effectiveness = calculateEffectiveness(contextSize);
