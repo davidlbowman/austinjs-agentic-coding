@@ -176,6 +176,7 @@ export function ContextSection() {
 							<div className="grid grid-cols-6 sm:grid-cols-5 gap-2 pt-4 auto-rows-fr">
 								{contextStages.map((stage, index) => (
 									<button
+										type="button"
 										key={stage.label}
 										onClick={() => setContextSize(stage.size)}
 										className={`text-center p-2 rounded-lg transition-all h-full min-h-[60px] flex flex-col justify-center cursor-pointer hover:scale-105 ${
