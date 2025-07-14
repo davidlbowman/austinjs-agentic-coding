@@ -8,7 +8,7 @@ export function HeroSection() {
 					Mid-2025 Professional Guide
 				</Badge>
 
-				<h1>AI in Software Engineering</h1>
+				<h1 className="mb-8">AI in Software Engineering</h1>
 
 				<h2>Current State, Pros, Cons, and Tool Selection Guide</h2>
 

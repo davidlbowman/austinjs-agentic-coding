@@ -120,7 +120,7 @@
 		@apply bg-purple-50/50 dark:bg-purple-900/10 text-foreground font-sans;
 	}
 	h1 {
-		@apply text-5xl font-bold tracking-tighter sm:text-6xl xl:text-7xl/none font-mono;
+		@apply text-5xl font-bold tracking-tighter sm:text-6xl xl:text-7xl/none font-mono mb-6;
 		@apply bg-gradient-to-r from-foreground via-purple-600 to-foreground bg-clip-text text-transparent;
 	}
 	h2 {
