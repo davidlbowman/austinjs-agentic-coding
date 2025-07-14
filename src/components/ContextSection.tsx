@@ -45,8 +45,8 @@ const contextStages = [
 		aiQuality: 60,
 		example: "AI starts missing dependencies, suggests incomplete solutions",
 		icon: Brain,
-		color: "text-purple-600 dark:text-purple-500",
-		bgColor: "bg-purple-200 dark:bg-purple-900/30",
+		color: "text-purple-500/80 dark:text-purple-400/80",
+		bgColor: "bg-purple-100/70 dark:bg-purple-900/25",
 	},
 	{
 		size: 500000,
@@ -55,8 +55,8 @@ const contextStages = [
 		aiQuality: 35,
 		example: "AI frequently hallucinates imports, misses critical context",
 		icon: AlertCircle,
-		color: "text-purple-700 dark:text-purple-600",
-		bgColor: "bg-purple-300 dark:bg-purple-900/40",
+		color: "text-purple-600 dark:text-purple-500",
+		bgColor: "bg-purple-200 dark:bg-purple-900/30",
 	},
 	{
 		size: 1000000,
@@ -65,8 +65,8 @@ const contextStages = [
 		aiQuality: 15,
 		example: "AI provides generic suggestions, can't grasp system architecture",
 		icon: AlertTriangle,
-		color: "text-purple-800 dark:text-purple-600",
-		bgColor: "bg-purple-400 dark:bg-purple-900/50",
+		color: "text-purple-700 dark:text-purple-600",
+		bgColor: "bg-purple-300 dark:bg-purple-900/40",
 	},
 ];
 
