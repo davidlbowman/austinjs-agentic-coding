@@ -177,14 +177,19 @@ export function ContextSection() {
 							</div>
 
 							{/* Context Stages Grid */}
-							<div className="grid grid-cols-5 gap-2 pt-4">
-								{contextStages.map((stage) => (
+							<div className="grid grid-cols-6 sm:grid-cols-5 gap-2 pt-4 auto-rows-fr">
+								{contextStages.map((stage, index) => (
 									<div
 										key={stage.label}
-										className={`text-center p-2 rounded-lg transition-all ${
+										className={`text-center p-2 rounded-lg transition-all h-full min-h-[60px] flex flex-col justify-center ${
 											contextSize >= stage.size
 												? stage.bgColor
 												: "bg-muted/50 opacity-50"
+										} ${
+											// On mobile: first 3 items span 2 cols each, last 2 items span 3 cols each
+											index < 3
+												? "col-span-2 sm:col-span-1"
+												: "col-span-3 sm:col-span-1"
 										}`}
 									>
 										<div className="text-xs font-medium">{stage.label}</div>
