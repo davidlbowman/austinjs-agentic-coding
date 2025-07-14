@@ -28,7 +28,7 @@ const contextStages = [
 		bgColor: "bg-purple-50 dark:bg-purple-900/10",
 	},
 	{
-		size: 10000,
+		size: 50000,
 		label: "Small Module",
 		description: "Strong comprehension",
 		aiQuality: 85,
@@ -39,7 +39,7 @@ const contextStages = [
 		bgColor: "bg-purple-100 dark:bg-purple-900/20",
 	},
 	{
-		size: 50000,
+		size: 200000,
 		label: "Medium Project",
 		description: "Partial context loss",
 		aiQuality: 60,
@@ -49,7 +49,7 @@ const contextStages = [
 		bgColor: "bg-purple-200 dark:bg-purple-900/30",
 	},
 	{
-		size: 200000,
+		size: 500000,
 		label: "Large Codebase",
 		description: "Significant degradation",
 		aiQuality: 35,
@@ -71,7 +71,7 @@ const contextStages = [
 ];
 
 export function ContextSection() {
-	const [contextSize, setContextSize] = useState(10000);
+	const [contextSize, setContextSize] = useState(50000);
 
 	// Find the current stage based on context size
 	const currentStage = contextStages.reduce((acc, stage) => {
@@ -81,8 +81,8 @@ export function ContextSection() {
 
 	// Calculate AI effectiveness based on context size
 	const calculateEffectiveness = (size: number) => {
-		// Exponential decay function
-		const decay = Math.exp(-size / 50000);
+		// Exponential decay function adjusted for new ranges
+		const decay = Math.exp(-size / 150000);
 		return Math.max(5, Math.min(100, decay * 100));
 	};
 
@@ -113,7 +113,7 @@ export function ContextSection() {
 									</span>
 								</div>
 								<Slider
-									defaultValue={[10000]}
+									defaultValue={[50000]}
 									max={1000000}
 									min={1000}
 									step={1000}
