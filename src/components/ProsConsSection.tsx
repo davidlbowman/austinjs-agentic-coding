@@ -91,26 +91,18 @@ export function ProsConsSection() {
 											{/* Mobile layout */}
 											<td className="py-4 px-2 md:hidden">
 												<div className="text-center space-y-3">
-													<div className="flex items-start gap-2 justify-center">
-														<CheckCircle className="h-5 w-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
-														<div>
-															<div className="text-purple-600 dark:text-purple-400 font-semibold">
-																{item.benefit}
-															</div>
-															<div className="text-sm">
-																{item.benefitDetail}
-															</div>
+													<div>
+														<div className="text-purple-600 dark:text-purple-400 font-semibold">
+															{item.benefit}
 														</div>
+														<div className="text-sm">{item.benefitDetail}</div>
 													</div>
 													<ArrowDown className="h-4 w-4 text-purple-500 dark:text-purple-400 mx-auto" />
-													<div className="flex items-start gap-2 justify-center">
-														<XCircle className="h-5 w-5 text-purple-500/60 dark:text-purple-400/60 flex-shrink-0 mt-0.5" />
-														<div>
-															<div className="text-purple-500/60 dark:text-purple-400/60 font-semibold">
-																{item.cost}
-															</div>
-															<div className="text-sm">{item.costDetail}</div>
+													<div>
+														<div className="text-purple-500/60 dark:text-purple-400/60 font-semibold">
+															{item.cost}
 														</div>
+														<div className="text-sm">{item.costDetail}</div>
 													</div>
 												</div>
 											</td>
