@@ -73,15 +73,12 @@ const contextStages = [
 export function ContextSection() {
 	const [contextSize, setContextSize] = useState(50000);
 
-	// Find the current stage based on context size
 	const currentStage = contextStages.reduce((acc, stage) => {
 		if (contextSize >= stage.size) return stage;
 		return acc;
 	}, contextStages[0]);
 
-	// Calculate AI effectiveness based on context size
 	const calculateEffectiveness = (size: number) => {
-		// Map size to effectiveness based on our stages
 		if (size <= 1000) return 100;
 		if (size <= 50000) return 85 + (15 * (50000 - size)) / 49000;
 		if (size <= 200000) return 75 + (10 * (200000 - size)) / 150000;
@@ -99,7 +96,6 @@ export function ContextSection() {
 				<h2 className="text-center mb-12">Context in AI Coding Tools</h2>
 
 				<div className="max-w-5xl mx-auto space-y-8">
-					{/* Interactive Context Simulator */}
 					<Card>
 						<CardHeader>
 							<CardTitle>Context Size vs AI Effectiveness</CardTitle>
@@ -108,7 +104,6 @@ export function ContextSection() {
 							</CardDescription>
 						</CardHeader>
 						<CardContent className="space-y-8">
-							{/* Slider */}
 							<div className="space-y-4">
 								<div className="flex justify-between text-sm">
 									<span>Codebase Size</span>
@@ -130,7 +125,6 @@ export function ContextSection() {
 								</div>
 							</div>
 
-							{/* Current Stage Display */}
 							<div className={`p-6 rounded-lg ${currentStage.bgColor}`}>
 								<div className="flex items-start gap-4">
 									<Icon
@@ -161,7 +155,6 @@ export function ContextSection() {
 									</div>
 								</div>
 
-								{/* Effectiveness Bar */}
 								<div className="mt-4">
 									<div className="h-3 bg-muted rounded-full overflow-hidden">
 										<div
@@ -180,7 +173,6 @@ export function ContextSection() {
 								</div>
 							</div>
 
-							{/* Context Stages Grid */}
 							<div className="grid grid-cols-6 sm:grid-cols-5 gap-2 pt-4 auto-rows-fr">
 								{contextStages.map((stage, index) => (
 									<div
@@ -190,7 +182,6 @@ export function ContextSection() {
 												? stage.bgColor
 												: "bg-muted/50 opacity-50"
 										} ${
-											// On mobile: first 3 items span 2 cols each, last 2 items span 3 cols each
 											index < 3
 												? "col-span-2 sm:col-span-1"
 												: "col-span-3 sm:col-span-1"
@@ -204,7 +195,6 @@ export function ContextSection() {
 								))}
 							</div>
 
-							{/* Key Insight within same card */}
 							<div className="pt-6 border-t space-y-4">
 								<p>
 									Context is the cornerstone of AI effectiveness—it's the

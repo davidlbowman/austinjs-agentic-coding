@@ -99,21 +99,17 @@ When implementing utility functions or data transformations:
 ```typescript
 import { Effect, Schema } from "effect"
 
-// Define schemas for type safety
 const InputSchema = Schema.Struct({
   field1: Schema.String,
   field2: Schema.Number
 })
 
-// Create type-safe functions
 export const processData = (input: unknown) =>
   Effect.gen(function* () {
     const validated = yield* Schema.decode(InputSchema)(input)
-    // Process validated data
     return transformedResult
   })
 
-// Usage in React components
 const handleAction = async () => {
   const result = await Effect.runPromise(
     processData(data).pipe(
@@ -147,7 +143,6 @@ test.describe('Feature Name', () => {
   })
 
   test('should display expected content', async ({ page }) => {
-    // Use semantic locators
     await expect(page.getByRole('heading', { name: 'Title' })).toBeVisible()
     await expect(page.getByRole('button', { name: 'Action' })).toBeVisible()
   })
@@ -247,14 +242,11 @@ Transform the technical README content into an engaging, interactive experience 
 #### Global CSS Patterns
 
 ```css
-/* Tailwind theme configuration */
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  /* Other theme variables... */
 }
 
-/* Base layer for semantic elements */
 @layer base {
   body {
     @apply bg-purple-50/50 dark:bg-purple-900/10 text-foreground font-sans;
@@ -278,11 +270,10 @@ Transform the technical README content into an engaging, interactive experience 
     @apply text-lg text-foreground;
   }
   section {
-    @apply py-16 px-4;
+    @apply py-12 px-4 sm:py-16;
   }
 }
 
-/* Utility classes */
 @layer utilities {
   .text-accent-purple {
     @apply text-purple-600 dark:text-purple-400 font-bold;
@@ -290,6 +281,22 @@ Transform the technical README content into an engaging, interactive experience 
   .drop-cap::first-letter {
     @apply float-left text-7xl md:text-8xl font-bold leading-[0.8] mr-2 mt-1;
     @apply bg-gradient-to-br from-purple-600 to-purple-400 bg-clip-text text-transparent;
+  }
+  .highlight {
+    @apply relative inline;
+    background-image: linear-gradient(
+      104deg,
+      transparent 0.4rem,
+      oklch(0.85 0.15 302 / 0.35) 0.4rem,
+      oklch(0.85 0.15 302 / 0.35) calc(100% - 0.2rem),
+      transparent calc(100% - 0.2rem)
+    );
+    padding: 0.375rem 0.5rem 0.25rem 0.5rem;
+    margin: -0.25rem -0.375rem -0.125rem -0.375rem;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    filter: drop-shadow(0 0 0.5px oklch(0.85 0.15 302 / 0.2));
+    @apply dark:bg-gradient-to-r dark:from-transparent dark:via-purple-500/20 dark:to-transparent;
   }
 }
 ```
@@ -372,3 +379,27 @@ Transform the technical README content into an engaging, interactive experience 
    - Added `.drop-cap::first-letter` utility class
    - Applied to first paragraphs in text-heavy sections
    - Purple gradient styling for drop caps
+
+**Latest Session - Mobile Fixes & Highlights**:
+
+1. **Mobile styling fixes**:
+   - Fixed alignment issues on small screens
+   - Adjusted padding for better mobile experience (`px-4` consistently)
+   - Fixed Context section percentage inconsistencies
+   - Improved responsive grid layouts (3-2 layout for context boxes on mobile)
+   
+2. **Highlighter effect implementation**:
+   - Created `.highlight` utility class with angled highlighter appearance
+   - 104-degree gradient for forward slash effect
+   - Extended padding on all sides to ensure full text coverage
+   - Applied to key concepts in boring sections
+   - Replaced bold text with highlights in non-header content
+   
+3. **Highlighted content**:
+   - Context-Compute Relationship: Key interdependence concepts
+   - MCP Section: Context management and real-time retrieval capabilities
+   - Agentic Coding: Parallel agent distribution and market growth
+   - Current State: Productivity gains and completion time increases
+   - AI Scalar: "AI doesn't replace skill; it scales it"
+   - Context Section: Infinite context concept
+   - Compute Section: Bottlenecks and infinite compute vision

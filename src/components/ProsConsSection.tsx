@@ -51,13 +51,11 @@ export function ProsConsSection() {
 						</CardDescription>
 					</CardHeader>
 					<CardContent>
-						{/* Table-like layout */}
 						<div className="overflow-x-auto">
 							<table className="w-full table-fixed">
 								<tbody>
 									{tradeoffs.map((item) => (
 										<tr key={item.benefit} className="border-b last:border-0">
-											{/* Desktop layout */}
 											<td className="py-4 px-2 w-[45%] hidden md:table-cell">
 												<div className="flex items-start gap-2">
 													<CheckCircle className="h-5 w-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
@@ -88,7 +86,6 @@ export function ProsConsSection() {
 												</div>
 											</td>
 
-											{/* Mobile layout */}
 											<td className="py-4 px-2 md:hidden">
 												<div className="text-center space-y-3">
 													<div>

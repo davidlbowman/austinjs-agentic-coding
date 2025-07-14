@@ -38,7 +38,6 @@ export function CurrentStateSection() {
 
 				<div className="max-w-5xl mx-auto">
 					<div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-						{/* Left side - description */}
 						<div className="space-y-4">
 							<p className="text-lg">
 								In 2025, AI is deeply integrated into software engineering,
@@ -70,7 +69,6 @@ export function CurrentStateSection() {
 							</div>
 						</div>
 
-						{/* Right side - Stats cards */}
 						<div className="space-y-3">
 							{statsData.map((stat) => (
 								<Card key={stat.label} className="overflow-hidden">

@@ -7,7 +7,6 @@ export function ContextComputeRelationshipSection() {
 				</h2>
 
 				<div className="max-w-4xl mx-auto space-y-6">
-					{/* Main content in readable paragraphs */}
 					<div className="space-y-4">
 						<p className="drop-cap">
 							From first principles,{" "}

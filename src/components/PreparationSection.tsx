@@ -42,7 +42,6 @@ export function PreparationSection() {
 							<CardTitle>Building Skills That AI Can Amplify</CardTitle>
 						</CardHeader>
 						<CardContent className="space-y-8">
-							{/* Introduction paragraphs from README */}
 							<div className="space-y-4">
 								<p>
 									As context windows expand and compute power grows, AI will
@@ -77,7 +76,6 @@ export function PreparationSection() {
 								</p>
 							</div>
 
-							{/* Foundational Skills - 3 columns */}
 							<div className="pt-6 border-t">
 								<h3 className="text-lg font-semibold mb-6 text-center">
 									Key Foundational Skills
@@ -101,7 +99,6 @@ export function PreparationSection() {
 								</div>
 							</div>
 
-							{/* Learning Approach - Checklist */}
 							<div className="pt-6 border-t">
 								<h3 className="text-lg font-semibold mb-4 text-center">
 									How to Learn These Skills

@@ -61,7 +61,6 @@ const computeImpact = [
 export function ComputeSection() {
 	const [computeLevel, setComputeLevel] = useState(50);
 
-	// Find the closest compute impact level
 	const getComputeStats = (level: number) => {
 		const closest = computeImpact.reduce((prev, curr) => {
 			return Math.abs(curr.computePower - level) <
@@ -70,7 +69,6 @@ export function ComputeSection() {
 				: prev;
 		});
 
-		// Interpolate context capacity based on compute level
 		const contextCapacity = Math.round(
 			Math.exp((level / 100) * Math.log(1000000)),
 		);
@@ -94,7 +92,6 @@ export function ComputeSection() {
 							</CardDescription>
 						</CardHeader>
 						<CardContent className="space-y-8">
-							{/* Compute Slider */}
 							<div className="space-y-4">
 								<div className="flex justify-between text-sm">
 									<span>Compute Power</span>
@@ -114,9 +111,7 @@ export function ComputeSection() {
 								</div>
 							</div>
 
-							{/* Impact Visualization */}
 							<div className="grid md:grid-cols-2 gap-6">
-								{/* Left: Metrics */}
 								<div className="flex flex-col h-full">
 									<div className="space-y-3 flex-1">
 										<div className="flex items-center justify-between p-3 bg-purple-100/70 dark:bg-purple-900/20 rounded-lg">
@@ -156,7 +151,6 @@ export function ComputeSection() {
 										</div>
 									</div>
 
-									{/* Trade-off Indicator */}
 									<div className="p-4 bg-purple-100/70 dark:bg-purple-900/20 rounded-lg mt-4">
 										<div className="flex items-center gap-2 mb-2">
 											<TrendingDown className="h-4 w-4 text-purple-600 dark:text-purple-400" />
@@ -172,7 +166,6 @@ export function ComputeSection() {
 									</div>
 								</div>
 
-								{/* Right: Capability Description */}
 								<div className="flex flex-col h-full">
 									<div className="p-4 bg-purple-100/70 dark:bg-purple-900/20 rounded-lg space-y-2 flex-1">
 										<h4 className="font-semibold">AI Capability Level</h4>
@@ -182,7 +175,6 @@ export function ComputeSection() {
 										</p>
 									</div>
 
-									{/* Visual Context Window */}
 									<div className="mt-4">
 										<div className="text-sm font-medium mb-2">
 											Effective Context Window
@@ -208,7 +200,6 @@ export function ComputeSection() {
 								</div>
 							</div>
 
-							{/* Key Insight */}
 							<div className="pt-6 border-t space-y-4">
 								<p>
 									Compute refers to the processing power required to run AI
@@ -244,7 +235,6 @@ export function ComputeSection() {
 								</p>
 							</div>
 
-							{/* Infinite Compute Vision */}
 							<div className="p-4 bg-purple-100/70 dark:bg-purple-900/20 rounded-lg">
 								<div className="flex items-start gap-3">
 									<InfinityIcon className="h-6 w-6 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-1" />

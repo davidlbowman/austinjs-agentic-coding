@@ -79,7 +79,6 @@ export function AIScalarSection() {
 		return acc;
 	}, skillLevels[0]);
 
-	// Calculate productivity metrics based on multiplier
 	const baseProductivity = {
 		featuresPerWeek: 1,
 		linesOfCode: 500,
