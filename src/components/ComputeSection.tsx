@@ -249,7 +249,7 @@ export function ComputeSection() {
 								<div className="flex items-start gap-3">
 									<InfinityIcon className="h-6 w-6 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-1" />
 									<div className="space-y-2">
-										<p className="font-semibold text-purple-900 dark:text-purple-100">
+										<p className="text-purple-900 dark:text-purple-100">
 											With infinite compute, context limitations disappear
 										</p>
 										<p className="text-sm text-muted-foreground">

@@ -227,12 +227,15 @@ export function AIScalarSection() {
 									allowing focus on high-level strategy and creativity.
 								</p>
 								<p>
-									The key takeaway is that AI doesn't replace skill; it scales
-									it. To maximize benefits, invest in building a robust skill
-									base first, then use AI to extend your capabilities. This
-									scalar effect underscores the importance of continuous
-									learning and verification, ensuring AI serves as a force
-									multiplier rather than a crutch.
+									The key takeaway is that{" "}
+									<span className="highlight">
+										AI doesn't replace skill; it scales it
+									</span>
+									. To maximize benefits, invest in building a robust skill base
+									first, then use AI to extend your capabilities. This scalar
+									effect underscores the importance of continuous learning and
+									verification, ensuring AI serves as a force multiplier rather
+									than a crutch.
 								</p>
 							</div>
 						</CardContent>

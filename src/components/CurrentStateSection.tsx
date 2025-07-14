@@ -48,8 +48,13 @@ export function CurrentStateSection() {
 							</p>
 							<p>
 								However, recent studies reveal a nuanced picture: while some
-								report up to 25-30% productivity gains, others find AI can
-								increase completion times by 19% in complex projects.
+								report up to{" "}
+								<span className="highlight">25-30% productivity gains</span>,
+								others find AI can
+								<span className="highlight">
+									increase completion times by 19%
+								</span>{" "}
+								in complex projects.
 							</p>
 							<p>
 								Core limitations like finite context windows and computational

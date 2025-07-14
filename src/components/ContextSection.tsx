@@ -222,10 +222,12 @@ export function ContextSection() {
 									hallucinate imports, and provide increasingly generic
 									suggestions.
 								</p>
-								<p className="font-semibold">
-									If we had infinite context, AI could maintain perfect
-									understanding of any codebase size, enabling flawless
-									end-to-end system design and implementation.
+								<p>
+									<span className="highlight">
+										If we had infinite context, AI could maintain perfect
+										understanding of any codebase size, enabling flawless
+										end-to-end system design and implementation.
+									</span>
 								</p>
 								<p>
 									In reality, we choose tools based on how well they expand or
