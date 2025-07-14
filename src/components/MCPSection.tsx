@@ -18,13 +18,18 @@ export function MCPSection() {
 					</p>
 
 					<p>
-						MCP effectively helps manage and expand context by providing better
-						lookup tools and integrations, allowing AI to "contract" or compact
-						context needs through efficient external queries. Instead of
-						overloading a model's internal context window with all data upfront,
-						MCP enables real-time retrieval from sources like files, APIs, or
-						databases, reducing token usage and making context more dynamic.
-						This contraction of effective context requirements improves
+						<span className="highlight">
+							MCP effectively helps manage and expand context by providing
+							better lookup tools and integrations
+						</span>
+						, allowing AI to "contract" or compact context needs through
+						efficient external queries. Instead of overloading a model's
+						internal context window with all data upfront,{" "}
+						<span className="highlight">
+							MCP enables real-time retrieval from sources like files, APIs, or
+							databases, reducing token usage and making context more dynamic
+						</span>
+						. This contraction of effective context requirements improves
 						accuracy, minimizes hallucinations, and scales to larger projects.
 						For example, an AI tool using MCP can pull specific code snippets or
 						project metadata on demand, enriching responses without exhausting
@@ -32,14 +37,17 @@ export function MCPSection() {
 					</p>
 
 					<p>
-						On the compute side, MCP optimizes processing by offloading tasks to
-						external systems, distributing workload to reduce local machine
-						strain and API latency. It enables more efficient compute
-						allocation, such as caching frequent queries or parallelizing data
-						fetches, which lowers overall costs and speeds up workflows.
-						However, it introduces setup complexity and potential security
-						considerations, as improper configuration could expose sensitive
-						data or increase compute overhead from mismanaged integrations.
+						On the compute side,{" "}
+						<span className="highlight">
+							MCP optimizes processing by offloading tasks to external systems
+						</span>
+						, distributing workload to reduce local machine strain and API
+						latency. It enables more efficient compute allocation, such as
+						caching frequent queries or parallelizing data fetches, which lowers
+						overall costs and speeds up workflows. However, it introduces setup
+						complexity and potential security considerations, as improper
+						configuration could expose sensitive data or increase compute
+						overhead from mismanaged integrations.
 					</p>
 				</div>
 			</div>

@@ -10,23 +10,31 @@ export function ContextComputeRelationshipSection() {
 					{/* Main content in readable paragraphs */}
 					<div className="space-y-4">
 						<p className="drop-cap">
-							From first principles, context and compute are interdependent
-							forces in AI systems: context provides the raw material (data and
-							knowledge) for intelligent outputs, while compute supplies the
-							energy to process and reason over that material.
+							From first principles,{" "}
+							<span className="highlight">
+								context and compute are interdependent forces in AI systems
+							</span>
+							: context provides the raw material (data and knowledge) for
+							intelligent outputs, while compute supplies the energy to process
+							and reason over that material.
 						</p>
 
 						<p>
-							They form a fundamental trade-off—more context demands more
-							compute to analyze it effectively, and limited compute forces
-							compromises in how much context can be handled without
-							degradation.
+							They form a fundamental trade-off—
+							<span className="highlight">
+								more context demands more compute to analyze it effectively
+							</span>
+							, and limited compute forces compromises in how much context can
+							be handled without degradation.
 						</p>
 
 						<p>
-							For example, if we had infinite compute (assuming no hardware
-							limitations), we theoretically wouldn't need fixed context windows
-							at all; models could dynamically process and retain unlimited
+							For example,{" "}
+							<span className="highlight">
+								if we had infinite compute (assuming no hardware limitations),
+								we theoretically wouldn't need fixed context windows at all
+							</span>
+							; models could dynamically process and retain unlimited
 							information in real-time, querying and synthesizing data on the
 							fly without memory constraints.
 						</p>
