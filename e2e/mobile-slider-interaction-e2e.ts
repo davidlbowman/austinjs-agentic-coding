@@ -1,7 +1,9 @@
 import { expect, test } from "@playwright/test";
 
 test.describe("Slider Functionality", () => {
-	test("should have exactly three sliders with one thumb each", async ({ page }) => {
+	test("should have exactly three sliders with one thumb each", async ({
+		page,
+	}) => {
 		await page.goto("/");
 
 		// Test all sliders on the page
